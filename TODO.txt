@@ -1,0 +1,8 @@
+Lo que hay que hacer:
+- un conversor de logos a tamaño pequeño (no tiene sentido guardar las imágenes en tamaño original)
+	en javascript:
+	img5.src = './img/swift.jpg';
+	img5.style.width = calcWidth(img5.style.height,img5.style.width).toString().concat('px');
+	img5.style.height = '48px';
+- el parser de json a dataSet
+- leer el json desde javascript

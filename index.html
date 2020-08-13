@@ -24,13 +24,16 @@
   </style>
 
   <script src="vis-timeline-graph2d.min.js"></script>
+  <script src="data.js"></script>
+  <script src="jquery-csv.js"></script>
   <link href="vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
   
 </head>
 <body>
 
-<h1>Serialization and deserialization</h1>
-
+<h1>Empresas en Argentina</h1>
+<h3>Prof. Mariana Barreña</h3>
+<!--
 <p>This example shows how to serialize and deserialize JSON data, and load this in the Timeline via a DataSet. Serialization and deserialization is needed when loading or saving data from a server.</p>
 
 <textarea id="data">
@@ -74,24 +77,51 @@
   <input type="button" id="load" value="&darr; Load" title="Load data from textarea into the Timeline">
   <input type="button" id="save" value="&uarr; Save" title="Save data from the Timeline into the textarea">
 </div>
-
+ -->
 <div id="visualization"></div>
 
 <script>
-  var txtData = document.getElementById('data');
+  // la variable items que contiene todos los items a mostrar en la línea de tiempo se encuentra en data.js
+
+  // var txtData = document.getElementById('data');
   var btnLoad = document.getElementById('load');
   var btnSave = document.getElementById('save');
 
   // Create an empty DataSet.
   // This DataSet is used for two way data binding with the Timeline.
-  var items = new vis.DataSet();
+  // var items = new vis.DataSet();
 
   // create a timeline
   var container = document.getElementById('visualization');
   var options = {
-    editable: true
+  width: '100%',
+  minHeight: '400px',
+  margin: {
+    item: 20
+  },
+  editable: false
   };
+  
   var timeline = new vis.Timeline(container, items, options);
+
+  // add event listener
+  //timeline.on('itemover', itemOver);
+
+
+/*
+  function itemOver(properties) {
+    
+    alert('item: '  + properties.item +
+          '\npageX: ' + properties.pageX +
+          '\npagey: ' + properties.pagey + 
+          '\nx: ' + properties.x +
+          '\ny: ' + properties.y +
+          '\ntime: ' + properties.time);
+    var item = items.get(properties.item);
+    alert('item1'+ item.start);
+
+  }
+*/
 
   function loadData () {
     // get and deserialize the data
