@@ -27,7 +27,7 @@ function createItem(text,image_path,links){
 		}
 	}else{
 		var a = document.createElement('a');
-		a.setAttribute('href',links[i]);
+		a.setAttribute('href',links[0]);
 		a.innerHTML = "Trabajo";
 		item.appendChild(document.createElement('br'));
 		item.appendChild(a);
