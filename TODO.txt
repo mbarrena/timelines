@@ -6,3 +6,4 @@ Lo que hay que hacer:
 	img5.style.height = '48px';
 - el parser de json a dataSet
 - leer el json desde javascript
+- Un mecanismo para podere agregar eventos en el que si una empresa ya estaba en la línea lo agregue a las anteriores
