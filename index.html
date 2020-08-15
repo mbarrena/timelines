@@ -48,12 +48,13 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
   // var items = new vis.DataSet();
 
   // create a timeline
-  var h = window.screen.height*75/100;
+  var hmin = window.screen.height*25/100;
+  var hmax = window.screen.height*75/100;
   var container = document.getElementById('visualization');
   var options = {
   width: '100%',
-  minHeight: '200px',
-  maxHeight: h,
+  minHeight: hmin,
+  maxHeight: hmax,
   margin: {
     item: 5
   }
