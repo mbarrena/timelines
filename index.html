@@ -61,10 +61,18 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
       vertical: 5
     },
     axis: 20
-  }
+  },
+  zoomMin: 315360000000,
   };
   
   var timeline = new vis.Timeline(container, items, options);
+  var focus_op = {
+    animation: false
+  }
+  
+  timeline.setWindow("1946","1974");
+  //timeline.focus("pritty");
+  //timeline.focus(renault_argentina,carrefour,focus_op)
   //timeline.focus(id or ids [, options])
 
 </script>
