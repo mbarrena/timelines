@@ -84,7 +84,7 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
     if(inputVal!=""){
       var zoomitem = items.get({
         filter: function (item) {
-          return (item.id.toString().startsWith(inputVal));
+          return (item.id.toString().includes(inputVal));
         }
       });
       timeline.focus(zoomitem[0].id,{zoom:false});  
