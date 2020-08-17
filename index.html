@@ -33,7 +33,7 @@
 
 <h2>Empresas en Argentina - Prof. Mariana Barreña</h3>
 Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
-
+<input type="text" id="buscador" name="fname" oninput="buscador()"><br>
 <div id="visualization"></div>
 
 <script>
@@ -74,6 +74,22 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
   //timeline.focus("pritty");
   //timeline.focus(renault_argentina,carrefour,focus_op)
   //timeline.focus(id or ids [, options])
+
+  //BUSCADOR
+  function buscador(){
+    var inputVal = document.getElementById("buscador").value;
+    inputVal = inputVal.toLowerCase();
+    inputVal = inputVal.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); //sacar tildes
+    inputVal = inputVal.replace(/ /g,"_");
+    if(inputVal!=""){
+      var zoomitem = items.get({
+        filter: function (item) {
+          return (item.id.toString().startsWith(inputVal));
+        }
+      });
+      timeline.focus(zoomitem[0].id,{zoom:false});  
+    }
+  }
 
 </script>
 </body>
