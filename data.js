@@ -10,6 +10,8 @@ function createItem(text,image_path,links){
 	if(image_path != "0"){
 		item.appendChild(document.createElement('br'));
 		var img = document.createElement('img');
+		//img.style.width = "200px";
+		img.style.height = "48px";
 		img.src = image_path;
 	//INNECESARIO SI GUARDAMOS IMG CONVERTIDAS
 	//img.style.width = calcWidth(img.style.height,img.style.width).toString().concat('px');
