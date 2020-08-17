@@ -6,19 +6,15 @@ function calcWidth(height, width) {
 
 function createItem(text,image_path,width_img,links){
 	var item = document.createElement('div');
-	item.appendChild(document.createTextNode(text));
 	if(image_path != "0"){
-		item.appendChild(document.createElement('br'));
 		var img = document.createElement('img');
 		img.style.width = (width_img).toString()+"px";
 		img.style.height = "48px";
 		img.src = image_path;
-	//INNECESARIO SI GUARDAMOS IMG CONVERTIDAS
-	//img.style.width = calcWidth(img.style.height,img.style.width).toString().concat('px');
-	//img.style.height = '48px';
-	//HASTA ACA
 		item.appendChild(img)
+		item.appendChild(document.createElement('br'));
 	}
+	item.appendChild(document.createTextNode(text));
 	if(links.length > 1){
 		for (var i = 0; i < links.length; i++) {
 			var a = document.createElement('a');
