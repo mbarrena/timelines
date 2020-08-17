@@ -4,13 +4,13 @@ function calcWidth(height, width) {
 //calcWidth(img5.style.height,img5.style.width).toString().concat('px')
 
 
-function createItem(text,image_path,links){
+function createItem(text,image_path,width_img,links){
 	var item = document.createElement('div');
 	item.appendChild(document.createTextNode(text));
 	if(image_path != "0"){
 		item.appendChild(document.createElement('br'));
 		var img = document.createElement('img');
-		//img.style.width = "200px";
+		img.style.width = width_img;
 		img.style.height = "48px";
 		img.src = image_path;
 	//INNECESARIO SI GUARDAMOS IMG CONVERTIDAS
