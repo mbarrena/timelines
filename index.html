@@ -2,39 +2,117 @@
 <html>
 <head>
   <title>Empresas - línea de tiempo</title>
-
-  <style>
-    body, html {
-      font-family: arial, sans-serif;
-      font-size: 11pt;
-    }
-
-    textarea {
-      width: 800px;
-      height: 200px;
-    }
-
-    .buttons {
-      margin: 20px 0;
-    }
-
-    .buttons input {
-      padding: 10px;
-    }
-  </style>
-
   <script src="vis-timeline-graph2d.min.js"></script>
   <script src="data.js"></script>
   <script src="trabajos.js"></script>
   <link href="vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    body {
+      font-family:  sans-serif;
+    }
+
+    .vis-timeline {
+      border: 2px solid #6d40d6;
+      font-family:  sans-serif;
+      font-size: 12pt;
+      /*background: linear-gradient(0deg, rgba(170,143,205,1) 0%, rgba(187,158,225,1) 100%);;*/
+      background: #f0f0f0;
+    }
+
+    .vis-item {
+      border-color: #6d40d6;
+      background-color: rgba(255,255,255,0.7);
+      background-color: #ffffff; 
+      font-size: 12pt;
+      color: black;
+      border-top:    0px solid  #6d40d6;
+      border-right:  0px solid #6d40d6;
+      border-bottom: 4px solid #6d40d6;
+      border-left:   0px solid  #6d40d6;
+      /*box-shadow: 5px 5px 20px rgba(128,128,128, 0.5);*/
+    }
+
+    .vis-item,
+    .vis-item.vis-line {
+      /*border-width: 5px;*/
+      /*border-color: #6d40d6;*/
+    }
+
+    .vis-item.vis-dot {
+      border-width: 5px;
+      border-radius: 0px;
+    }
+
+    /*
+    .vis-item.vis-selected {
+      border-color: green;
+      background-color: lightgreen;
+    }
+    */
+
+    .vis-time-axis .vis-text {
+      color: black;
+      padding-top: 10px;
+      padding-left: 10px;
+    }
+
+    .vis-time-axis .vis-text.vis-major {
+      font-weight: bold;
+    }
+
+    .vis-time-axis .vis-grid.vis-minor {
+      border-width: 2px;
+      border-color: rgba(168,168,168,0.2);
+    }
+
+    .vis-time-axis .vis-grid.vis-major {
+      border-width: 2px;
+      border-color: #F991A3;
+    }
+
+    #visualization {
+      position:relative;
+      z-index:0;
+    }
+
+    #busqueda{
+      text-align:center;
+      position:absolute;
+      z-index:1;
+      top:2%;
+      left:80%;
+      height:30px;
+      line-height: 30px;
+      color:#ffffff;
+      background-color:rgba(109,64,214,1);      
+      padding-right:5px;
+      padding-left:5px;
+    }
+
+    #buscador{
+      background:transparent;
+      color:#ffffff;
+      margin:auto;
+      border:    0px solid  #6d40d6;
+      border-bottom: 1px solid #ffffff;
+    }
+
+  </style>
+
   
 </head>
 <body>
 
-<h2>Empresas en Argentina - Prof. Mariana Barreña</h3>
+<h2>Empresas en Argentina - Prof. Mariana Barreña</h2>
 Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
-<input type="text" id="buscador" name="fname" oninput="buscador()"><br>
-<div id="visualization"></div>
+<br>
+<div id="visualization">
+  <div id="busqueda">
+  Buscar empresa:
+  <input type="text" id="buscador" name="fname" oninput="buscador()">
+  </div>
+</div>
 
 <script>
   // la variable items que contiene todos los items a mostrar en la línea de tiempo se encuentra en data.js
