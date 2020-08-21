@@ -22,7 +22,7 @@
       font-family:  sans-serif;
       font-size: 12pt;
       /*background: linear-gradient(0deg, rgba(170,143,205,1) 0%, rgba(187,158,225,1) 100%);;*/
-      background: #f0f0f0;
+      background: #f1e8f8;
     }
 
     .vis-item {
@@ -195,7 +195,7 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
     },
     axis: 20
   },
-  zoomMin: 315360000000,
+  zoomMin: 630800000000,
   };
   
   var timeline = new vis.Timeline(container, items, options);
@@ -219,12 +219,15 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
     inputVal = inputVal.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); //sacar tildes
     inputVal = inputVal.replace(/ /g,"_");
     if(inputVal!=""){
-      var zoomitem = items.get({
+      var zoomitem = items.getIds({
         filter: function (item) {
           return (item.id.toString().includes(inputVal));
         }
       });
-      timeline.focus(zoomitem[0].id,{zoom:false});  
+      timeline.focus(zoomitem,{zoom:true}); 
+      timeline.setSelection(zoomitem); 
+    }else{
+      timeline.setSelection([]);
     }
   }
 
