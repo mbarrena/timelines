@@ -99,7 +99,7 @@ var items = new vis.DataSet([
 {id: "sheraton", content: createItem("Sheraton","./img/sheraton.png",57,["https://drive.google.com/open?id=1r4yPJwjbO_gn3BKoGnjcJoSSfRAw0UpS"]), start: "1972-08-25"},
 {id: "represa_el_chocon", content: createItem("Represa el Chocón","0",0,["https://drive.google.com/open?id=1tHxWd3DfclAJFyEBgPQvxikg6CFgJHnH"]), start: "1973-01-01"},
 {id: "karavell", content: createItem("Karavell","./img/karavell.png",136,["https://drive.google.com/open?id=1q094auaOIBYvKg8Z2kWFznYW51pqEb2u"]), start: "1973-07-02"},
-{id: "represa_yacyreta", content: createItem("Represa Yacyretá","0",0,["https://drive.google.com/open?id=1-tw1--_WdgUdDKh4w1afjbc3-aZPFQs2"]), start: "1973-12-03"},
+{id: "represa_yacyreta", content: createItem("Represa Yacyretá","./img/represa_yacyreta.png",48,["https://drive.google.com/open?id=1-tw1--_WdgUdDKh4w1afjbc3-aZPFQs2"]), start: "1973-12-03"},
 {id: "central_nuclear_atucha", content: createItem("Central Nuclear Atucha","0",0,["https://drive.google.com/open?id=1dFDRzbEeyXULmPsYYj2ofbHRUj__BeYY"]), start: "1974-05-21"},
 {id: "pumper_nic", content: createItem("Pumper Nic","./img/pumper_nic.png",48,["https://drive.google.com/file/d/1D5HA1zpejQCmtokktpoLukglCZUWNg9B/view?usp=sharing"]), start: "1974-07-01"},
 {id: "metac", content: createItem("Metac","./img/metac.png",48,["http://drive.google.com/uc?export=view&id=1I2ZVQpABsNu1LZdO-DhAp4resALvjjc_"]), start: "1974-07-01"},
