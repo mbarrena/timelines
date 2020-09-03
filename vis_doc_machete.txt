@@ -1,0 +1,73 @@
+Vis.js
+
+item properties: https://visjs.github.io/vis-timeline/docs/timeline/
+- className (give multiple items same individual css style)
+- content*: The contents of the item. This can be plain text or html code.
+- group: When the group column is provided, all items with the same group are placed on one line. A vertical axis is displayed showing the groups. (considerar para trabajos sobre la misma empresa?)
+- id*: an id for the item. Needed when dynamically adding, updating and removin items in a Dataset
+- start*: start date of the item
+- title: Add a title for the item, displayed when holding the mouse on the item. The title can be an HTML element or a string containing plain text or HTML. (esto no se si hace falta)
+- type: The type of the item. Can be 'box' (default), 'point', 'range', or 'background'. Types 'box' and 'point' need a start date, the types 'range' and 'background' needs both a start and end date. 
+
+
+Para agregar imágenes (html) al ícono: https://visjs.github.io/vis-timeline/examples/timeline/items/htmlContents.html
+
+  var item5 = document.createElement('div');
+  item5.appendChild(document.createTextNode('item 5'));
+  item5.appendChild(document.createElement('br'));
+  var img5 = document.createElement('img');
+  img5.src = '../resources/img/attachment-icon.png';
+  img5.style.width = '48px';    <--------- regla de tres con dimensiones 
+  										   orig de la imagen y altura fija
+  img5.style.height = '48px';   <--------- algo fijo
+  item5.appendChild(img5);
+
+
+A table with groups can be created like:
+var groups = [
+  {
+    id: 1 (o mejor, un string, lei q hay bugs con ints),
+    content: 'Group 1'
+    // Optional: a field 'className', 'style', 'order', [properties]
+  }
+  // more groups...
+]);
+
+global options:
+- height: the height of the timeline in pixels or as a percentage. When height is undefined or null, the height of the timeline is automatically adjusted to fit the contents.
+- por default, la timeline se puede mover arrastrando, hacer zoom y sacar zoom a gusto
+- margin: permite pedir margen entre items (considerar para imágenes?)
+- editable.add: hay q setearlo a false, porque no queremos q nadie la edite
+- snap: When moving items on the Timeline, they will be snapped to nice dates like full hours or days, depending on the current scale. The snap function can be replaced with a custom function, or can be set to null to disable snapping. The signature of the snap function is:
+
+function snap(date: Date, scale: string, step: number) : Date or number
+
+The parameter scale can be can be 'millisecond', 'second', 'minute', 'hour', 'weekday, 'week', 'day, 'month, or 'year'. The parameter step is a number like 1, 2, 4, 5. 
+- template: acá hay un ejemplo de template creation con handlebars https://visjs.github.io/vis-timeline/examples/timeline/styling/itemTemplates.html (template = formato estandarizado para todas las entradas)
+https://codepen.io/pen/?&editable=true=https%3A%2F%2Fvisjs.github.io%2Fvis-timeline%2Fexamples%2Ftimeline-generated%2Fcodepen.db0425b7f9ed3ece9c4c99b1aba9f3781604e190c93ad606cef2bb1e2b96ae4f.html
+
+  <!-- load handlebars for templating, and create a template -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script id="item-template" type="text/x-handlebars-template">
+    <table class="score">
+      <tr>
+        <td colspan="3" class="description">{{description}}</td>
+      </tr>
+      <tr>
+        <td>{{player1}}</td>
+        <th>{{score1}} - {{score2}}</th>
+        <td>{{player2}}</td>
+      </tr>
+      <tr>
+        <td><img src="https://flagpedia.net/data/flags/mini/{{abbr1}}.png" width="31" height="20" alt="{{abbr1}}" /></td>
+        <th></th>
+        <td><img src="https://flagpedia.net/data/flags/mini/{{abbr2}}.png" width="31" height="20" alt="{{abbr2}}" /></td>
+      </tr>
+    </table>
+  </script>
+
+  <script src="../../../standalone/umd/vis-timeline-graph2d.min.js"></script>
+  <link href="../../../styles/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+
+
+Customización con css: https://visjs.github.io/vis-timeline/examples/timeline/styling/customCss.html
