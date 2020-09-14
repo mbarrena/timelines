@@ -1,11 +1,49 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Empresas - línea de tiempo</title>
+  <title>Unidad 7</title>
   <script src="vis-timeline-graph2d.min.js"></script>
   <script src="data.js"></script>
-  <script src="trabajos.js"></script>
+  <script src="7unidad.js"></script>
   <link href="vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+  <!-- load handlebars for templating, and create a template -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script id="item-template" type="text/x-handlebars-template">
+    <table class="score">
+      <tr>
+        <td>
+          {{#if image}}
+            <img src={{image}} width="30" height="30" alt="" style="vertical-align:middle;"/>
+          {{else}}
+            <img src="../img/triangle.svg" width="8" height="8" alt="" style="vertical-align:middle;"/>
+          {{/if}}
+        </td>
+        <td style="padding:0 4px 0 4px;">
+          {{#if link}}
+            <a href={{link}} alt="">{{content}}</a>
+          {{else}}
+            {{#if links}}
+                <ul class="people_list" style="list-style:none;padding: 0;margin:0;text-align:left;">
+                <li><a href={{links.[1]}} alt="">{{content}}</a></li>
+                {{#each links}}
+                {{#if @first}}
+                  
+                {{else}}
+                  <li><a href={{this}} alt="">Otro trabajo</a></li>
+                {{/if}}
+                {{/each}}
+                </ul>
+            {{else}}
+                {{content}}
+            {{/if}}
+          {{/if}}
+        </td>
+          
+          
+      </tr>
+    </table>
+  </script>
+
 
   <style type="text/css">
     body {
@@ -17,35 +55,40 @@
       height:100%;
     }
 
+    :root {
+      --main-bg-color: #c7cfff;
+      --lines-color: #3e3cc7;
+      --grid-color:rgba(0, 3, 161, 0.2);
+    }
+
     .vis-timeline {
-      border: 2px solid #663cc7;
+      border: 2px solid var(--lines-color);
       font-family:  sans-serif;
       font-size: 12pt;
       /*background: linear-gradient(0deg, rgba(170,143,205,1) 0%, rgba(187,158,225,1) 100%);;*/
-      background: #e7dbf0;
+      background: var(--main-bg-color);
     }
 
     .vis-item {
-      border-color: #663cc7;
-      background-color: rgba(255,255,255,0.7);
-      background-color: #ffffff; 
+      border-color: transparent;
+      background-color: transparent;
       font-size: 12pt;
       color: black;
-      border-top:    0px solid  #663cc7;
-      border-right:  0px solid #663cc7;
-      border-bottom: 4px solid #663cc7;
-      border-left:   0px solid  #663cc7;
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
+      /*border-top:    0px solid  var(--lines-color);
+      border-right:  0px solid var(--lines-color);
+      border-bottom: 4px solid var(--lines-color);
+      border-left:   0px solid  var(--lines-color);*/
+      /*box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);*/
       /*box-shadow: 5px 5px 20px rgba(128,128,128, 0.5);*/
     }
 
     .vis-item.vis-line {
-      border-width: 0.7px;
-      /*border-color: #663cc7;*/
+      border-width: 0px;
+      /*border-color: var(--lines-color);*/
     }
 
     .vis-item.vis-dot {
-      border-width: 5px;
+      border-width: 4px;
       border-radius: 0px;
     }
 
@@ -73,7 +116,7 @@
 
     .vis-time-axis .vis-grid.vis-major {
       border-width: 2px;
-      border-color: #F991A3;
+      border-color: var(--grid-color);
     }
 
     #visualization {
@@ -91,7 +134,7 @@
       height:30px;
       line-height: 30px;
       color:#ffffff;
-      background-color:rgba(102,60,199,1);      
+      background-color: var(--lines-color);      
       padding-right:5px;
       padding-left:5px;
     }
@@ -107,7 +150,7 @@
       background:transparent;
       color:#ffffff;
       margin:auto;
-      border: 0px solid  #663cc7;
+      border: 0px solid  var(--lines-color);
       border-bottom: 1px solid #ffffff;
     }
 
@@ -137,6 +180,30 @@
       width:22vw;
     }
 
+    /* unvisited link */
+    a:link {
+      color: DarkBlue;
+      font-weight: bold;  
+      text-decoration: none;
+    }
+
+    /* visited link */
+    a:visited {
+      color: maroon;
+      text-decoration: none;
+    }
+
+    /* mouse over link */
+    a:hover {
+      color: maroon;
+      text-decoration: none;
+    }
+
+    /* selected link */
+    a:active {
+      text-decoration: none;
+    } 
+
   </style>
 
   
@@ -158,7 +225,7 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
   </div>
   <div id='ayuda' onmouseleave="helptext_hide()">
     <div id='signoayuda' onmouseenter="helptext_show()">
-      <img src="./img/question.png", style="width:40px;height:40px;">
+      <img src="../img/question.svg", style="width:40px;height:40px;">
     </div>
     <div id='helptext'>
       <a href="https://mbarrena.github.io/timelines/empresas/" target="_blank">Fullscreen</a>
@@ -181,22 +248,28 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
   // This DataSet is used for two way data binding with the Timeline.
   // var items = new vis.DataSet();
 
+  // create a handlebars template
+  var source   = document.getElementById('item-template').innerHTML;
+  var template = Handlebars.compile(document.getElementById('item-template').innerHTML);
+
   // create a timeline
   var hmin = window.screen.height*80/100;
   var hmax = window.screen.height*80/100;
   var container = document.getElementById('visualization');
   var options = {
-  width: '100%',
-  minHeight: hmin,
-  maxHeight: hmax,
-  margin: {
-    item: {
-      horizontal: 5,
-      vertical: 5
-    },
-    axis: 20
+    width: '100%',
+    minHeight: hmin,
+    maxHeight: hmax,
+    margin: {
+      item: {
+        horizontal: 5,
+        vertical: 5
+      },
+      axis: 20,
   },
-  zoomMin: 630800000000,
+  zoomMin: 63080000000,
+  template: template,
+  align:"left"
   };
   
   var timeline = new vis.Timeline(container, items, options);
@@ -206,7 +279,7 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
   
   var signoayuda = document.getElementById('signoayuda');
 
-  timeline.setWindow("1946","1974");
+  timeline.setWindow("1964","1975");
   //signoayuda.addEventListener('onmouseenter',helptext_show,false);
   //signoayuda.addEventListener('onmouseleave',helptext_hide,false);
   //timeline.focus("pritty");

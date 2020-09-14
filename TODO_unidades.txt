@@ -1,0 +1,10 @@
+- Eventos que están en timeglider de la unidad 2
+- Eventos en la línea de tiempo publicada ahora en unidad uno (edad media, etc) -> ver si se puede cambiar el color de fondo para cada sección?
+- Eventos no publicados de cuatrimestres recientes:
+	+ 1c2020
+	+ 2c2019
+	ambos en el directorio de mama (????)
+	+ 2c2020 -> en excel
+
+
+- Falta arreglar buscador e implementar sort a distintas timelines
