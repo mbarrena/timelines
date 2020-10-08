@@ -3,7 +3,7 @@ function createItem(text,image_path,width_img,links){
 	if(image_path != "0"){
 		var img = document.createElement('img');
 		img.style.width = (width_img).toString()+"px";
-		img.style.height = "30px";
+		img.style.height = "48px";
 		img.src = image_path;
 		item.appendChild(img)
 		//item.appendChild(document.createElement('br'));
@@ -13,7 +13,7 @@ function createItem(text,image_path,width_img,links){
 		for (var i = 0; i < links.length; i++) {
 			var a = document.createElement('a');
 			a.setAttribute('href',links[i]);
-			a.innerHTML = "Referencia ("+ (i+1).toString() + ")";
+			a.innerHTML = "Trabajo ("+ (i+1).toString() + ")";
 			item.appendChild(document.createElement('br'));
 			item.appendChild(a);
 		}

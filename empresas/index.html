@@ -225,10 +225,15 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
           return (item.id.toString().includes(inputVal));
         }
       });
-      timeline.focus(zoomitem,{zoom:true}); 
-      timeline.setSelection(zoomitem); 
+      if(zoomitem.length){
+        console.log(zoomitem)
+        timeline.focus(zoomitem,{zoom:true});
+        timeline.setSelection(zoomitem); 
+      }else{
+        timeline.setSelection({});
+      }
     }else{
-      timeline.setSelection([]);
+      timeline.setSelection({});
     }
   }
 
