@@ -3,6 +3,8 @@ import urllib.request
 import numpy as np
 import requests
 import unicodedata
+import subprocess
+from PIL import Image
 
 def strip_accents(text):
     try:
@@ -121,7 +123,6 @@ def try_create(x):
     except Exception as exc:
         print('ERROR '+ x[0])
 
-
 # ========= UPDATE DATABASE ========= #
 
 start_line = "var items = new vis.DataSet(["
@@ -130,8 +131,8 @@ end_line = "]);"
 #Necesito vaciar la lsita de repetidos antes de procesar todo el df
 handled_repeats = []
 
-!cp ./empresas/trabajos_appendable.js ./empresas/trabajos_appendable_backup.js
-!cp ./empresas/trabajos.js ./empresas/trabajos_backup.js
+subprocess.run(["cp","./empresas/trabajos_appendable.js","./empresas/trabajos_appendable_backup.js"])
+subprocess.run(["cp","./empresas/trabajos.js","./empresas/trabajos_backup.js"])
 f = open("./empresas/trabajos_appendable.js", "a")
 #f.write(start_line)
 #f.write("\n")
@@ -148,7 +149,7 @@ for linea in cosas[:-1]:
 #La ULTIMA fila debe ir SIN COMA en la base finalizada, y CON COMA en la appendable!
 f.close()
 print("Diferenciando versiones appendable y finalizada")
-!cp "./empresas/trabajos_appendable.js" "./empresas/trabajos.js"
+subprocess.run(["cp","./empresas/trabajos_appendable.js","./empresas/trabajos.js"])
 
 f2 = open("./empresas/trabajos.js","a")
 #aca va sin coma y con linea finalizadora
