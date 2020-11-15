@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Unidad 1</title>
+  <script src="vis-timeline-graph2d.min.js"></script>
+  <script src="data.js"></script>
+  <script src="1unidad.js"></script>
+  <link href="vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+  <!-- load handlebars for templating, and create a template -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script id="item-template" type="text/x-handlebars-template">
+    <table class="score">
+      <tr>
+        <td>
+          {{#if image}}
+            <img src={{image}} width="30" height="30" alt="" style="vertical-align:middle;"/>
+          {{else}}
+            <img src="../img/triangle.svg" width="8" height="8" alt="" style="vertical-align:middle;"/>
+          {{/if}}
+        </td>
+        <td style="padding:0 4px 0 4px;">
+          {{#if link}}
+            <a href={{link}} alt="">{{content}}</a>
+          {{else}}
+            {{#if links}}
+                <ul class="people_list" style="list-style:none;padding: 0;margin:0;text-align:left;">
+                <li><a href={{links.[1]}} alt="">{{content}}</a></li>
+                {{#each links}}
+                {{#if @first}}
+                  
+                {{else}}
+                  <li><a href={{this}} alt="">Otro trabajo</a></li>
+                {{/if}}
+                {{/each}}
+                </ul>
+            {{else}}
+                {{content}}
+            {{/if}}
+          {{/if}}
+        </td>
+          
+          
+      </tr>
+    </table>
+  </script>
+
+
+  <style type="text/css">
+    body {
+      /*font-family: 'arial', Helvetica, sans-serif;*/
+      font-family:  sans-serif;
+      background-color: rgba(240,240,240,0.5);
+      color:0;
+      width:99%;
+      height:100%;
+    }
+
+    :root {
+      --main-bg-color: #c7cfff;
+      --lines-color: #3e3cc7;
+      --grid-color:rgba(0, 3, 161, 0.2);
+    }
+
+    .vis-timeline {
+      border: 2px solid var(--lines-color);
+      font-family:  sans-serif;
+      font-size: 12pt;
+      /*background: linear-gradient(0deg, rgba(170,143,205,1) 0%, rgba(187,158,225,1) 100%);;*/
+      background: var(--main-bg-color);
+    }
+
+    .vis-item {
+      border-color: transparent;
+      background-color: transparent;
+      font-size: 12pt;
+      color: black;
+      /*border-top:    0px solid  var(--lines-color);
+      border-right:  0px solid var(--lines-color);
+      border-bottom: 4px solid var(--lines-color);
+      border-left:   0px solid  var(--lines-color);*/
+      /*box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);*/
+      /*box-shadow: 5px 5px 20px rgba(128,128,128, 0.5);*/
+    }
+
+    .vis-item.vis-line {
+      border-width: 0px;
+      /*border-color: var(--lines-color);*/
+    }
+
+    .vis-item.vis-dot {
+      border-width: 4px;
+      border-radius: 0px;
+    }
+
+    /*
+    .vis-item.vis-selected {
+      border-color: green;
+      background-color: lightgreen;
+    }
+    */
+
+    .vis-time-axis .vis-text {
+      color: black;
+      padding-top: 10px;
+      padding-left: 10px;
+    }
+
+    .vis-time-axis .vis-text.vis-major {
+      font-weight: bold;
+    }
+
+    .vis-time-axis .vis-grid.vis-minor {
+      border-width: 2px;
+      border-color: rgba(168,168,168,0.2);
+    }
+
+    .vis-time-axis .vis-grid.vis-major {
+      border-width: 2px;
+      border-color: var(--grid-color);
+    }
+
+    #visualization {
+      position:relative;
+      z-index:0;
+      width:100%;
+    }
+
+    #busqueda{
+      position:absolute;
+      z-index:1;
+      right:1%;
+      top:2%;
+      text-align:center;
+      height:30px;
+      line-height: 30px;
+      color:#ffffff;
+      background-color: var(--lines-color);      
+      padding-right:5px;
+      padding-left:5px;
+    }
+
+    #ayuda{
+      position:absolute;
+      z-index:1;
+      top:2%;
+      left:0.5%;
+    }
+
+    #buscador{
+      background:transparent;
+      color:#ffffff;
+      margin:auto;
+      border: 0px solid  var(--lines-color);
+      border-bottom: 1px solid #ffffff;
+    }
+
+    #signoayuda{
+      width:40px;
+    }
+
+    #intro{
+      margin:auto;
+    }
+
+    #body{
+      display:flex;
+      flex-direction: column;
+    }
+
+    #helptext{
+      display: none;
+      position:absolute;
+      padding-right:5px;
+      padding-left:5px;
+      background: #ffedc5;
+      border: 1px solid #ffd983;
+      z-index:2;
+      top:1px;
+      left:45px;
+      width:22vw;
+    }
+
+    /* unvisited link */
+    a:link {
+      color: DarkBlue;
+      font-weight: bold;  
+      text-decoration: none;
+    }
+
+    /* visited link */
+    a:visited {
+      color: maroon;
+      text-decoration: none;
+    }
+
+    /* mouse over link */
+    a:hover {
+      color: maroon;
+      text-decoration: none;
+    }
+
+    /* selected link */
+    a:active {
+      text-decoration: none;
+    } 
+
+  </style>
+
+  
+</head>
+<body>
+
+<div id='body'>
+<!---
+<div id="intro">
+<h2>Empresas en Argentina - Prof. Mariana Barreña</h2>
+Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
+</div>
+--->
+
+<div id="visualization">
+  <div id="busqueda">
+    Buscar empresa:
+    <input type="text" id="buscador" name="fname" oninput="buscador()">
+  </div>
+  <div id='ayuda' onmouseleave="helptext_hide()">
+    <div id='signoayuda' onmouseenter="helptext_show()">
+      <img src="../img/question.svg", style="width:40px;height:40px;">
+    </div>
+    <div id='helptext'>
+      <a href="https://mbarrena.github.io/timelines/empresas/" target="_blank">Fullscreen</a>
+      <br>Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
+      <br><small>Profesora Mariana Barreña. <a href="https://github.com/makobot-sh" target="_blank">credit</a></small>
+    </div>
+  <!--
+  -->
+  </div>
+</div>
+</div>
+<script>
+  // la variable items que contiene todos los items a mostrar en la línea de tiempo se encuentra en data.js
+
+  // var txtData = document.getElementById('data');
+  //var btnLoad = document.getElementById('load');
+  //var btnSave = document.getElementById('save');
+
+  // Create an empty DataSet.
+  // This DataSet is used for two way data binding with the Timeline.
+  // var items = new vis.DataSet();
+
+  // create a handlebars template
+  var source   = document.getElementById('item-template').innerHTML;
+  var template = Handlebars.compile(document.getElementById('item-template').innerHTML);
+
+  // create a timeline
+  var hmin = window.screen.height*80/100;
+  var hmax = window.screen.height*80/100;
+  var container = document.getElementById('visualization');
+  var options = {
+    width: '100%',
+    minHeight: hmin,
+    maxHeight: hmax,
+    margin: {
+      item: {
+        horizontal: 5,
+        vertical: 5
+      },
+      axis: 20,
+  },
+  zoomMin: 63080000000,
+  template: template,
+  align:"left"
+  };
+  
+  var timeline = new vis.Timeline(container, items, options);
+  var focus_op = {
+    animation: false
+  }
+  
+  var signoayuda = document.getElementById('signoayuda');
+
+  timeline.setWindow("1790","1810");
+  //signoayuda.addEventListener('onmouseenter',helptext_show,false);
+  //signoayuda.addEventListener('onmouseleave',helptext_hide,false);
+  //timeline.focus("pritty");
+  //timeline.focus(renault_argentina,carrefour,focus_op)
+  //timeline.focus(id or ids [, options])
+
+  //BUSCADOR
+  function buscador(){
+    var inputVal = document.getElementById("buscador").value;
+    inputVal = inputVal.toLowerCase();
+    inputVal = inputVal.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); //sacar tildes
+    inputVal = inputVal.replace(/ /g,"_");
+    if(inputVal!=""){
+      var zoomitem = items.getIds({
+        filter: function (item) {
+          return (item.id.toString().includes(inputVal));
+        }
+      });
+      timeline.focus(zoomitem,{zoom:true}); 
+      timeline.setSelection(zoomitem); 
+    }else{
+      timeline.setSelection([]);
+    }
+  }
+
+  function helptext_show(){
+    document.getElementById("helptext").style.display="initial";
+  }
+  function helptext_hide(){
+    document.getElementById("helptext").style.display="none";
+  }
+
+</script>
+</body>
+</html>
