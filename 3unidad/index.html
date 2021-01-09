@@ -305,6 +305,16 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
     }
   }
 
+  timeline.on('select', function (properties) {
+    var copyText = items.get(properties.items)[0].content.toString();
+    const el = document.createElement('textarea');
+    el.value = copyText;
+    //document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    alert('Copiado nombre del evento: ' + copyText);
+  });
+
   function helptext_show(){
     document.getElementById("helptext").style.display="initial";
   }
