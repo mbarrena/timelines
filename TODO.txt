@@ -1,3 +1,0 @@
-- cambiar fuentes
-- ver si hacer lo de los íconos para los trabajos
-- armar el sistema para agregar 
