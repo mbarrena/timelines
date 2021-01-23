@@ -315,6 +315,7 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
     inputVal = inputVal.toLowerCase();
     inputVal = inputVal.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); //sacar tildes
     inputVal = inputVal.replace(/ /g,"_");
+    console.log(inputVal)
     if(inputVal!=""){
       var zoomitem = items.getIds({
         filter: function (item) {
