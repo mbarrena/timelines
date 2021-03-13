@@ -25,7 +25,6 @@ var items = new vis.DataSet([
 "https://drive.google.com/file/d/1qt2i4LhWofTbzXIrau14fUu7Kod_SJWY/view?usp=sharing"
 ], start: new Date(1492,10,12)},
 {id: "1-11-1700:_reformas_borbonicas_en_l", content: "1-11-1700: Reformas borbónicas en la Nueva España (fecha: muerte Carlos II)", image:"../img/informacion.svg", link:"https://drive.google.com/file/d/1NV_UuQ8H0SwSrBMK5nnPOGEt_n49UEdE/view?usp=sharing", start: "1700-11-01"},
-
 {id: "1760_a_1840:_revolucion_industrial", content: "1760 a 1840: Revolución Industrial", image:"../img/informacion.svg", links:["https://drive.google.com/file/d/1pQFDoTH5IjpgI61zjSFY_dvefD35N8jI/view?usp=sharing",
 "http://drive.google.com/uc?export=view&id=1zbwGxYLCfJVXU8fah4PGcCobDP5NeNEN",
 "http://drive.google.com/uc?export=view&id=1Bg8ql7-MegEuQ-8Rgx5YYY-XfVzryAW4","http://drive.google.com/uc?export=view&id=1Bg8ql7-MegEuQ-8Rgx5YYY-XfVzryAW4"

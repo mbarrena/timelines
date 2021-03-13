@@ -1,3 +1,9 @@
 var items = new vis.DataSet([
 {id: "2015_16_diciembre_fin_del_cepo_ca", content: "2015 16 diciembre Fin del 'Cepo' cambiario", image:"../img/informacion.svg", link:"http://drive.google.com/uc?export=view&id=1cixnYNAACZSefc8jtnHQStcIQ_ZARFbf", start: new Date(2015,12,16)}
+{id: "10-12-2015:_inicio_presidencia_de_i", content: "10-12-2015: inicio presidencia de Ing. Macri por \"Cambiemos\"", image:"../img/informacion.svg", link:"https://drive.google.com/open?id=13Lqod_2iZiCmJyUpgKuBGOSAunSujf1Z", start: "2015-12-10"},
+{id: "16-12-2015:_fin_cepo_cambiario", content: "16-12-2015: fin \"Cepo\" Cambiario", image:"../img/informacion.svg", link:"https://drive.google.com/open?id=17RAvZ67SN19SXJvboT-F-Tfc71nMgEGj", start: "2015-12-16"},
+{id: "25-11-2016:_fallecimiento_fidel_cas", content: "25-11-2016: fallecimiento Fidel Castro", image:"../img/informacion.svg", link:"https://drive.google.com/open?id=1VhPZ4QEoGM9KZZAHnZHGiV2nEqoOCzFd", start: "2016-11-25"},
+{id: "15-11-2017:_desaparicion_submarino_", content: "15-11-2017: desaparición Submarino Ara San Juan ", image:"../img/informacion.svg", link:"https://drive.google.com/file/d/1bdcrHJzutg4lulyaS0XU9OtTcjCgh-7P/view?usp=sharing", start: "2017-11-15"},
+{id: "28-11-2018_al_02-12-2018:_cumbre_de", content: "28-11-2018 al 02-12-2018: Cumbre del G20 en CABA", image:"../img/informacion.svg", link:"https://drive.google.com/open?id=1cz4jTbwgYRHn2_2unJTzqaQDmKDr5Q6i", start: "2018-11-28"},
+{id: "28-11-2018_al_02-12-2018:_cumbre_g2", content: "28-11-2018 al 02-12-2018: Cumbre G20 en CABA (cont.)", image:"../img/informacion.svg", link:"https://drive.google.com/open?id=1C6_KAUIJw7hF5fbRX2z-89VZjM2UV_lb", start: "2018-11-28"}
 ]);

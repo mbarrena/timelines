@@ -16,7 +16,6 @@ var items = new vis.DataSet([
 "http://drive.google.com/uc?export=view&id=1GlmBhgvP0uR8Ls1RFQn175M4O6vqIHg5","http://drive.google.com/uc?export=view&id=1PKtjlPHhpSDziXDpy09nOyvgPtfRgFdG",
 "https://drive.google.com/file/d/1_4N2ZEyzv52eXxaX410R3hBV_-4tC-_7/view?usp=sharing","https://drive.google.com/file/d/1J6m3AwRKL6ZhOOKhc097eUq4cfcYGRCM/view?usp=sharing","https://drive.google.com/file/d/1pmEvpoVFieXq6LI5fo3aIA3_S6JA35qv/view?usp=sharing"
 ], start: new Date(476,0,0)},
-{id: "1930_-_6_set_golpe_militar_de_uribu", content: "1930 - 6 set Golpe militar de Uriburu", image:"../img/informacion.svg", link:"http://drive.google.com/uc?export=view&id=1CGAZkNgDilpdEqC6rZ_kj15hTkPG2-kb", start: new Date(1930,9,6)},
 {id: "2340_ac:_mesopotamia", content: "2340 aC: Mesopotamia", image:"../img/informacion.svg", links:["https://drive.google.com/file/d/1hJ6lRO1KeLylrao2zEP6lOUo5ht-mV7j/view?usp=sharing",
 "http://drive.google.com/uc?export=view&id=1572RSXAWOMc4oySfkGxCbnDwxZkvQL7m"
 ], start: new Date(-2340,06,01)},
@@ -26,7 +25,6 @@ var items = new vis.DataSet([
 "https://drive.google.com/file/d/1qt2i4LhWofTbzXIrau14fUu7Kod_SJWY/view?usp=sharing"
 ], start: new Date(1492,10,12)},
 {id: "1-11-1700:_reformas_borbonicas_en_l", content: "1-11-1700: Reformas borbónicas en la Nueva España (fecha: muerte Carlos II)", image:"../img/informacion.svg", link:"https://drive.google.com/file/d/1NV_UuQ8H0SwSrBMK5nnPOGEt_n49UEdE/view?usp=sharing", start: "1700-11-01"},
-
 {id: "1780_a_1840:_revolucion_industrial", content: "1780 a 1840: Revolución Industrial", image:"../img/informacion.svg", links:["https://drive.google.com/file/d/1pQFDoTH5IjpgI61zjSFY_dvefD35N8jI/view?usp=sharing",
 "http://drive.google.com/uc?export=view&id=1zbwGxYLCfJVXU8fah4PGcCobDP5NeNEN",
 "http://drive.google.com/uc?export=view&id=1Bg8ql7-MegEuQ-8Rgx5YYY-XfVzryAW4","http://drive.google.com/uc?export=view&id=1Bg8ql7-MegEuQ-8Rgx5YYY-XfVzryAW4"
