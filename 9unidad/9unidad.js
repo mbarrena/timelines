@@ -71,5 +71,15 @@ var items = new vis.DataSet([
 {id: "30-05-1989:_plan_bunge_y_born_plan_", content: "30-05-1989: Plan Bunge y Born (Plan BB)", start: "1989-05-31"},
 {id: "1989:_indulto_a_militares_compromet", content: "1989: Indulto a militares comprometidos en violación de derechos humanos", start: "1989-07-01"},
 {id: "08-07-89_primera_presidencia_carlos", content: "08-07-89 Primera presidencia Carlos Saúl Menem", start: "1989-07-08"},
-{id: "08-07-89_ministro_de_economia_migue", content: "08-07-89 Ministro de Economía Miguel Roig (hasta 15-07-89)", start: "1989-07-08"}
+{id: "08-07-89_ministro_de_economia_migue", content: "08-07-89 Ministro de Economía Miguel Roig (hasta 15-07-89)", start: "1989-07-08"},
+{id: "steve_jobs_presenta_su_macintosh", content: "Steve Jobs presenta su Macintosh", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=6faWFLjUJRg", start: "1984-1-24"},
+{id: "acuerdo_con_el_fmi_de_1984", content: "Acuerdo con el FMI de 1984", image:"../img/informacion.svg", links:['"https://elpais.com/diario/1984/06/10/economia/455666406_850215.html"', '"https://elpais.com/diario/1984/09/19/economia/464392810_850215.html"'], start: "1984-9-18"},
+{id: "discurso_del_presidente_alfonsin_en", content: "Discurso del Presidente Alfonsín en la ONU", image:"../img/informacion.svg", links:['"https://www.youtube.com/watch?v=pjAe1Ud14mg"', '"https://www.tiempoar.com.ar/nota/raul-alfonsin-1984-un-mundo-injusto-es-inestable-e-inseguro"'], start: "1984-9-24"},
+{id: "juicio_a_la_junta_militar_22-4-1985", content: "Juicio a la Junta Militar (22-4-1985 al 9-12-1985)", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=GI3Q6zxV5II", start: "1985-4-22"},
+{id: "proyecto_para_trasladar_la_capital_", content: "Proyecto para trasladar la Capital Federal a Viedma-Río Negro", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=N5v8GKZRkoE", start: "1986-4-16"},
+{id: "plan_primavera", content: "Plan Primavera", image:"../img/informacion.svg", links:['"https://www.youtube.com/watch?v=NLiqhyRmeDk"', '"https://www.airedesantafe.com.ar/economia/a-30-anos-del-plan-primavera-alfonsin-n76126"'], start: "1988-8-3"},
+{id: "reconocimiento_internacional_de_pal", content: "Reconocimiento internacional de Palestina", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=WFNW3glwkj4", start: "1988-11-15"},
+{id: "el_consenso_de_washington", content: "El Consenso de Washington", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=VTrqqqMQgC4", start: "1989-1-1"},
+{id: "discurso_del_ministro_de_economia_j", content: "Discurso del Ministro de Economía Jesús Rodríguez (Cadena Nacional)", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=Jq2e3Qd2iMQ", start: "1989-5-27"},
+{id: "presidencia_del_dr._carlos_saul_men", content: "Presidencia del Dr. Carlos Saúl Menem", image:"../img/informacion.svg", links:['"https://www.youtube.com/watch?v=0epwiFA_bbA"', '"https://www.youtube.com/watch?v=0JxyOoGaD7A"', '"https://www.youtube.com/watch?v=ad2lVzCVq-M"'], start: "1989-7-8"}
 ]);
