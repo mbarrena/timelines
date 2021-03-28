@@ -96,4 +96,4 @@ var items = new vis.DataSet([
 {id: "10-02-1912:_ley_8.871_gral_de_elecc", content: "10-02-1912: Ley 8.871 Gral de Elecciones o Ley Sáenz Peña", start: "1912-02-10"},
 {id: "1912:_grito_de_alcorta", content: "1912: Grito de Alcorta", start: "1912-07-01"},
 {id: "1912:_fundacion_federacion_agraria_", content: "1912: fundación Federación Agraria Argentina", start: "1912-07-01"},
-{id: "1913:_pico_inversion_industrial", content: "1913: pico inversión industrial", start: "1913-07-01"}
+{id: "1913:_pico_inversion_industrial", content: "1913: pico inversión industrial", start: "1913-07-01"},
