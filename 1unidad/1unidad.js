@@ -18,7 +18,7 @@ var items = new vis.DataSet([
 ], start: new Date(476,0,0)},
 {id: "2340_ac:_mesopotamia", content: "2340 aC: Mesopotamia", image:"../img/informacion.svg", links:["https://drive.google.com/file/d/1hJ6lRO1KeLylrao2zEP6lOUo5ht-mV7j/view?usp=sharing",
 "http://drive.google.com/uc?export=view&id=1572RSXAWOMc4oySfkGxCbnDwxZkvQL7m"
-], start: new Date(-2340,6,1)},
+], start: new Date(-2340,06,01)},
 {id: "509_ac:_roma_se_convirtio_en_republ", content: "509 aC: Roma se convirtió en República ", image:"../img/informacion.svg", link:"https://drive.google.com/file/d/1XKCzCzR8mL2Hq53vGndhWYgUmM0pcI98/view?usp=sharing", start: new Date(-509,07,02)},
 {id: "siglos_xi,_xii_y_xiii:_feudalismo", content: "Siglos XI, XII y XIII: Feudalismo", image:"../img/informacion.svg", link:"https://drive.google.com/file/d/1xACO_EKKyg4wFIMV0qqTBvgqZoMU_HQD/view?usp=sharing", start: "1250-06-01"},
 {id: "1492_12_de_octubre_descubrimiento_d", content: "1492 12 de octubre Descubrimiento de América", image:"../img/informacion.svg", links:["http://drive.google.com/uc?export=view&id=1cCjReNnEiHTM4Gej3OgWvSDNLAfxP3UO","http://drive.google.com/uc?export=view&id=1cCjReNnEiHTM4Gej3OgWvSDNLAfxP3UO",
@@ -46,5 +46,8 @@ var items = new vis.DataSet([
 {id: "la_caida_de_constantinopla", content: "La caída de Constantinopla", image:"../img/informacion.svg", link:"http://www.cervantesvirtual.com/portales/la_caida_de_constantinopla/sitiadores_y_sitiados/", start: "1453"},
 {id: "la_primera_revolucion_industrial", content: "La primera Revolución Industrial", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=sOb59ALkGnc", start: "1750"},
 {id: "el_terror:_auge_de_la_revolucion_fr", content: "El Terror: auge de la Revolución Francesa", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=gmPV7hWLDLY", start: "1793"},
-{id: "fundacion_de_la_universidad_naciona", content: "Fundación de la Universidad Nacional de Córdoba", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=BSJ7pZxdy4I", start: "1613"}
+{id: "macri_inaugura_el_metro_bus_en_ex-r", content: "Macri inaugura el \"metro bus\" en \"Ex-Ruta 8\"", image:"../img/informacion.svg", links:['"https://youtu.be/wlzoVKiLynU"', '"https://www.google.com/amp/s/www.cronista.com/amp/economiapolitica/Macri-inauguro-otro-tramo-de-la-ruta-8-obra-clave-para-su-alianza-con-el-campo-20190423-0009.html"'], start: "2019-7-16"},
+{id: "division_del_imperio_romano", content: "División del Imperio Romano ", image:"../img/informacion.svg", links:['"https://www.youtube.com/watch?v=RcEo2ILFfT0"', '"https://mihistoriauniversal.com/edad-antigua/decadencia-division-imperio-romano"'], start: "395"},
+{id: "cruzadas_edad_media", content: "Cruzadas Edad Media ", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=Fqn9vsHMtHo", start: "1096", end: "1291"},
+{id: "guerra_de_independencia_de_estados_", content: "Guerra de Independencia de Estados Unidos", image:"../img/informacion.svg", link:"https://youtu.be/nMA5ykesU0I", start: "1775-4-19", end: "1783-9-3"}
 ]);

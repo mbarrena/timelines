@@ -3,6 +3,7 @@ import numpy as np
 import unicodedata
 import sys
 import subprocess
+import re
 
 IDN_SIZE = 35
 order_col = 0
@@ -222,7 +223,12 @@ elif(len(sys.argv) >= 3 and sys.argv[2]=="-e"):
         print ("Error! El orden debe ser un número")
         start_order = input("Evento con menor orden a insertar: ")
 
-    df = df[df.iloc[:,order_col]>=start_order]
+    end_order = input("Evento con mayor orden a insertar: ")
+    while not re.match("\d+",end_order):
+        print ("Error! El orden debe ser un número")
+        end_order = input("Evento con mayor orden a insertar: ")
+
+    df = df[(df.iloc[:,order_col]>=int(start_order)) & (df.iloc[:,order_col]<=int(end_order))]
 
     names = df.apply(get_name,axis=1)
     seen = set()
