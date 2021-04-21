@@ -20,13 +20,14 @@ end_m_col = 10
 end_d_col = 11
 classic_col = 12
 tourism_col = 13
-rawdate_col = 14
-link1_col = 15
-link2_col = 16
-link3_col = 17
-link4_col = 18
-link5_col = 19
-notes_col = 20
+preexist_col = 14
+rawdate_col = 15
+link1_col = 16
+link2_col = 17
+link3_col = 18
+link4_col = 19
+link5_col = 20
+notes_col = 21
 
 def strip_accents(text):
     try:
