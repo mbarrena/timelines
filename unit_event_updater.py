@@ -5,6 +5,28 @@ import sys
 import subprocess
 
 IDN_SIZE = 35
+order_col = 0
+handin_col = 1 #Mes y año en que fue entregada la tarea
+event_col = 2
+unit_col = 3
+start_ac_col = 4
+start_y_col = 5
+start_m_col = 6
+start_d_col = 7
+end_ac_col = 8
+end_y_col = 9
+end_m_col = 10
+end_d_col = 11
+classic_col = 12
+tourism_col = 13
+rawdate_col = 14
+link1_col = 15
+link2_col = 16
+link3_col = 17
+link4_col = 18
+link5_col = 19
+notes_col = 20
+
 def strip_accents(text):
     try:
         text = unicode(text, 'utf-8')
@@ -21,13 +43,13 @@ def sanitizar_nombre(text):
     return strip_accents((text.strip().replace(" ", "_").replace("(","").replace(")","")).lower()).replace('&#34;','').replace('"','')
 
 def get_name(x):
-    sanitized = sanitizar_nombre(x[0])
+    sanitized = sanitizar_nombre(x[event_col])
     return sanitized[:IDN_SIZE]
 
 # RECIBE FILA DEL DATAFRAME
 def obtenerlink(x):
     links = []
-    for i in range(13,18):
+    for i in range(link1_col,notes_col):
         if( not pd.isnull(x[i]) ):
             links.append(quote(x[i]))
 
@@ -43,64 +65,64 @@ def unquote(text):
 
 # Identify type of timeline event (general information (logo_info) vs tourist information (logo_tour))
 def find_type(x):
-    if( not pd.isnull(x[11]) ):
+    if( not pd.isnull(x[tourism_col]) ):
         return "turismo"
     else:
         return "informacion"
 
 def get_start_date(x):
     date=0
-    if( pd.isnull(x[2]) ):
+    if( pd.isnull(x[start_ac_col]) ):
         # Not a b.C. date
-        if(pd.isnull(x[3])): #No start year (invalid)
+        if(pd.isnull(x[start_y_col])): #No start year (invalid)
             pass
-        elif(pd.isnull(x[4])): #No month or day specified
-            date="{}".format(int(x[3]))
+        elif(pd.isnull(x[start_m_col])): #No month or day specified
+            date="{}".format(int(x[start_y_col]))
             date=quote(date)
-        elif(pd.isnull(x[5])): #No day specified
-            date="{}-{}".format(int(x[3]),int(x[4]))
+        elif(pd.isnull(x[start_d_col])): #No day specified
+            date="{}-{}".format(int(x[start_y_col]),int(x[start_m_col]))
             date=quote(date)
         else: #Full date specified
-            date="{}-{}-{}".format(int(x[3]),int(x[4]),int(x[5]))
+            date="{}-{}-{}".format(int(x[start_y_col]),int(x[start_m_col]),int(x[start_d_col]))
             date=quote(date)
     else:
         #b.C. date
-        if(pd.isnull(x[3])): #No start year (invalid)
+        if(pd.isnull(x[start_y_col])): #No start year (invalid)
             pass
         else:
-            date="new Date(-{},1,1)".format(int(x[3]))
+            date="new Date(-{},1,1)".format(int(x[start_y_col]))
 
     if(date==0):
-        raise Exception("No start date specified for event: ",x[0])
+        raise Exception("No start date specified for event: ",x[event_col])
 
     return date
 
 def get_end_date(x):
     date=0
-    if( pd.isnull(x[6]) ):
+    if( pd.isnull(x[end_ac_col]) ):
         # Not a b.C. date
-        if(pd.isnull(x[7])): #No start year (no end date specified, valid)
+        if(pd.isnull(x[end_y_col])): #No start year (no end date specified, valid)
             pass
-        elif(pd.isnull(x[8])): #No month or day specified
-            date="{}".format(int(x[7]))
+        elif(pd.isnull(x[end_m_col])): #No month or day specified
+            date="{}".format(int(x[end_y_col]))
             date=quote(date)
-        elif(pd.isnull(x[9])): #No day specified
-            date="{}-{}".format(int(x[7]),int(x[8]))
+        elif(pd.isnull(x[end_d_col])): #No day specified
+            date="{}-{}".format(int(x[end_y_col]),int(x[end_m_col]))
             date=quote(date)
         else: #Full date specified
-            date="{}-{}-{}".format(int(x[7]),int(x[8]),int(x[9]))
+            date="{}-{}-{}".format(int(x[end_y_col]),int(x[end_m_col]),int(x[end_d_col]))
             date=quote(date)
     else:
         #b.C. date
-        if(pd.isnull(x[7])): #No end year (no end date specified, valid)
+        if(pd.isnull(x[end_y_col])): #No end year (no end date specified, valid)
             pass
         else:
-            date="new Date(-{},1,1)".format(int(x[7]))
+            date="new Date(-{},1,1)".format(int(x[end_y_col]))
 
     return date
 
 def sorter(x):
-    return x[1]
+    return x[unit_col]
 
 # Args: x    a row of the event dataframe
 def crear_evento(x):
@@ -111,7 +133,7 @@ def crear_evento(x):
     start = get_start_date(x)
     end = get_end_date(x)
     links = []
-    name_event = x[0].replace("&#34;", '\\"').replace('"','\\"')
+    name_event = x[event_col].replace("&#34;", '\\"').replace('"','\\"')
         
     if(check_repeats.count(idn)==0):
         #Event is not repeated
@@ -120,7 +142,7 @@ def crear_evento(x):
         if(handled_repeats.count(idn)!=0):
             raise Exception("Event already created") 
         handled_repeats.append(idn) #we only want one event with all the data
-        filtro = df['title'].str.contains(x[0][:21])
+        filtro = df['title'].str.contains(x[event_col][:21])
         df_links = df[filtro]
         links = []
         df_links = df_links.apply(obtenerlink,axis=1)
@@ -156,7 +178,7 @@ def try_create(x):
         return crear_evento(x)
         # If exception is raised, no return
     except Exception as exc:
-        print('[!!!] Evento repetido:',x[0])
+        print('[!!!] Evento repetido:',x[event_col])
 
 
 ####################
@@ -171,7 +193,7 @@ if(len(sys.argv) < 2):
     print("    -e    Execute program on .csv")
     sys.exit()
 
-df = pd.read_csv(sys.argv[1],index_col=False)
+df = pd.read_csv(sys.argv[1],skiprows=1,index_col=False)
 
 ### TEST FUNCTIONS ###
 if(len(sys.argv) >= 3 and sys.argv[2]=="-t"):
@@ -194,7 +216,14 @@ if(len(sys.argv) >= 3 and sys.argv[2]=="-t"):
     print(try_create(test_event))
 
 
-else if(len(sys.argv) >= 3 and sys.argv[2]=="-e"):
+elif(len(sys.argv) >= 3 and sys.argv[2]=="-e"):
+    start_order = input("Evento con menor orden a insertar: ")
+    while not re.match("\d+",start_order):
+        print ("Error! El orden debe ser un número")
+        start_order = input("Evento con menor orden a insertar: ")
+
+    df = df[df.iloc[:,order_col]>=start_order]
+
     names = df.apply(get_name,axis=1)
     seen = set()
     check_repeats = []
