@@ -95,7 +95,7 @@ def get_start_date(x):
             date="new Date(-{},1,1)".format(int(x[start_y_col]))
 
     if(date==0):
-        raise Exception("No start date specified for event: ",x[event_col])
+        raise Exception("No start date specified for event")
 
     return date
 
@@ -136,6 +136,7 @@ def crear_evento(x):
     end = get_end_date(x)
     links = []
     name_event = x[event_col].replace("&#34;", '\\"').replace('"','\\"')
+    name_event = "{}: {}".format(start,name_event)
         
     if(check_repeats.count(idn)==0):
         #Event is not repeated
@@ -144,7 +145,7 @@ def crear_evento(x):
         if(handled_repeats.count(idn)!=0):
             raise Exception("Event already created") 
         handled_repeats.append(idn) #we only want one event with all the data
-        filtro = df['title'].str.contains(x[event_col][:21])
+        filtro = df['Evento'].str.contains(x[event_col][:21])
         df_links = df[filtro]
         links = []
         df_links = df_links.apply(obtenerlink,axis=1)
@@ -180,8 +181,7 @@ def try_create(x):
         return crear_evento(x)
         # If exception is raised, no return
     except Exception as exc:
-        print('[!!!] Evento repetido:',x[event_col])
-
+        print('[!!!] {} {}'.format(exc,x[event_col]))
 
 ####################
 ### Program code ###
@@ -288,7 +288,7 @@ elif(len(sys.argv) >= 3 and sys.argv[2]=="-e"):
 
         #La version appendable va con coma y sin linea finalizadora
         f = open("./"+unit_name+"/"+unit_name+"_appendable.js", "a")
-        f.write(cosas.iloc[-1]["Event"]+",")
+        f.write(unit.iloc[-1]["Event"]+",")
         f.close()
         print("Versión appendable creada")
         print("Finalizado!")
