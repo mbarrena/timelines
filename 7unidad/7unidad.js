@@ -134,9 +134,7 @@ var items = new vis.DataSet([
 {id: "movimiento_teatro_abierto", content: "1981-7-28: Movimiento Teatro Abierto", image:"../img/turismo.svg", link:"Http://www.teatrodelpueblo.org.ar/teatro_abierto/", start: "1981-7-28"},
 {id: "inicio_de_la_revolucion_argentina", content: "1966-6-28: Inicio de la Revolución Argentina ", image:"../img/informacion.svg", links:['"https://www.historiahoy.com.ar/28-junio-1966-golpe-estado-illia-n142"', '"https://tapas.clarin.com/tapa.html#19660628"'], start: "1966-6-28", end: "1973-5-25"},
 {id: "la_muerte_del_che_guevara", content: "1967-10-9: La muerte del “Che” Guevara ", image:"../img/informacion.svg", link:" https://youtu.be/qNA823WbyyA", start: "1967-10-9"},
-{id: "primer_transplante_de_corazon_en_el", content: "1968: Primer transplante de corazón en el país ", image:"../img/informacion.svg", link:" http://www.archivoliterariochivilcoy.com/primer-trasplante-corazon-pais-al-chivilcoyano-anton
- io-enrique-serrano-1968/
-", start: "1968"},
+{id: "primer_transplante_de_corazon_en_el", content: "1968: Primer transplante de corazón en el país ", image:"../img/informacion.svg", link:" http://www.archivoliterariochivilcoy.com/primer-trasplante-corazon-pais-al-chivilcoyano-antonio-enrique-serrano-1968/", start: "1968"},
 {id: "mision_apolo_11", content: "1969-7-11: Misión Apolo 11", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=pIQAC-HDSzo", start: "1969-7-11", end: "1969-7-24"},
 {id: "el_viborazo", content: "1971-4-15: El \"Viborazo\"", image:"../img/informacion.svg", link:"https://youtu.be/3Fca99tF8OA", start: "1971-4-15"},
 {id: "masacre_de_trelew", content: "1972-8-22: \"Masacre de Trelew\"", image:"../img/informacion.svg", links:['"https://parquedelamemoria.org.ar/48-anos-de-la-masacre-de-trelew/"', '"https://www.laizquierdadiario.com/La-masacre-de-Trelew-22574"'], start: "1972-8-22"},
