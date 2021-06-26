@@ -136,7 +136,7 @@ def crear_evento(x):
     end = get_end_date(x)
     links = []
     name_event = x[event_col].replace("&#34;", '\\"').replace('"','\\"')
-    name_event = "{}: {}".format(start,name_event)
+    name_event = "{}: {}".format(unquote(start),name_event)
         
     if(check_repeats.count(idn)==0):
         #Event is not repeated
