@@ -64,5 +64,13 @@ var items = new vis.DataSet([
 {id: "dic-1964:_plan_nacion", content: "Dic-1964: Plan Nacional de Desarrollo 1965-69 (de largo plazo; 2 lineamientos grales.)", start: "1964-12-01"},
 {id: "oct-nov_de_1965:_mini", content: "Oct-nov de 1965: miniplan", start: "1965-10-01"},
 {id: "16-05-1966:_revolucio", content: "16-05-1966: Revolución Cultural Proletaria en China (Mao Tse-Tung)", image:"../img/informacion.svg", link:"https://drive.google.com/open?id=1VlX5mQ32ZYRFTuMatb1xLTFz4p84t1pH", start: "1966-05-16"},
-{id: "28-06-1966:_golpe_de_", content: "28-06-1966: golpe de Estado derroca a Illia", image:"../img/informacion.svg", link:"https://drive.google.com/file/d/1Zleo5AuF7FHF8N88dTAyiNM0eGHbPO4A/view?usp=sharing", start: "1966-06-28"}
+{id: "28-06-1966:_golpe_de_", content: "28-06-1966: golpe de Estado derroca a Illia", image:"../img/informacion.svg", link:"https://drive.google.com/file/d/1Zleo5AuF7FHF8N88dTAyiNM0eGHbPO4A/view?usp=sharing", start: "1966-06-28"},
+{id: "revolucion_hungara", content: "1956-10-23: Revolución húngara ", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=s_vMq_rL2rc", start: "1956-10-23", end: "1956-11-11"},
+{id: "batalla_del_acero", content: "1958-6: Batalla del Acero ", image:"../img/informacion.svg", link:"https://youtu.be/uSDdh3biDag", start: "1958-6"},
+{id: "batalla_del_petroleo_segun_oscar_se", content: "1958: Batalla del Petróleo según Oscar Secco", image:"../img/informacion.svg", link:"https://www.youtube.com/watch?v=LoAyzvHWXI8&ab_channel=Visi%C3%B3nDesarrollista", start: "1958"},
+{id: "frondizi_recibe_a_e._che_guevara_en", content: "1958-8-18: Frondizi recibe a E. \"Che\" Guevara en Olivos (alarma a las FFAA)", image:"../img/informacion.svg", links:['"https://www.youtube.com/watch?v=9sk0_IC0gJA"', '"https://upload.wikimedia.org/wikipedia/commons/2/20/Arturo_Frondizi_con_Fidel\r\n_Castro.jpg\r"', '"https://www.elhistoriador.com.ar/18-de-agosto-de-1961-la-entrevista-de-frondizi-con-el- che-guevara/"'], start: "1958-8-18"},
+{id: "asume_alsogaray_como_ministro_de_ec", content: "1959-6-25: Asume Alsogaray como ministro de economía", image:"../img/informacion.svg", link:"https://youtu.be/UQ0FszXzw7s", start: "1959-6-25", end: "1961-4-26"},
+{id: "presidencia_de_arturo_illia", content: "1963-10-12: Presidencia de Arturo Illia", image:"../img/informacion.svg", link:"https://youtu.be/UwN7ommEa70", start: "1963-10-12", end: "1966-6-28"},
+{id: "plan_nacional_de_desarrollo", content: "1964: Plan Nacional de Desarrollo ", image:"../img/informacion.svg", link:"https://cdsa.aacademica.org/000-010/164.pdf", start: "1964"},
+{id: "sancion_de_la_ley_14459,_ley_de_sal", content: "1964-5: Sanción de la Ley 14459, Ley de salario mínimo, vital y móvil", image:"../img/informacion.svg", link:"https://www.rionegro.com.ar/una-ley-sancionada-durante-la-presidencia-de-i-OQRN_671834/", start: "1964-5"}
 ]);
