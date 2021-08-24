@@ -34,7 +34,6 @@ var items = new vis.DataSet([
 "https://drive.google.com/file/d/1pIO9m0jnGgOO9upQBSXOld4XGnpx1pV9/view?usp=sharing"
 ], start: "1789-05-05"},
 {id: "fines_sxviii_a_mediados_sxix:_roman", content: "Fines SXVIII a mediados SXIX: Romanticismo", image:"../img/informacion.svg", link:"https://drive.google.com/file/d/1lrfBs4IxPLEflcCE50LqkAiuRVGrsBim/view?usp=sharing", start: "1790-06-01"},
-{id: "1800:_segunda_revolucion_industrial", content: "1800: Segunda Revolución Industrial", start: "1800-07-01"},
 {id: "revolucion_francesa", content: "Revolución Francesa", image:"../img/informacion.svg", links:['"https://www.youtube.com/watch?v=SzdcRYLHKpo"', '"https://www.youtube.com/watch?v=ttdq818TGD0&feature=youtu.be"'], start: "1789-5-5"},
 {id: "reglamento_de_libre_comercio_con_am", content: "Reglamento de Libre Comercio con América (monopolio comercial español)", image:"../img/informacion.svg", links:['"https://www.youtube.com/watch?v=3G2oOaxaehE"', '"https://elarcondelahistoria.com/reglamento-de-comercio-libre-12101778/"'], start: "1778-10-12"},
 {id: "dinastia_shang", content: "Dinastía Shang", image:"../img/informacion.svg", links:['"https://chinaantigua.com/dinastia-shang/"', '"https://www.youtube.com/watch?v=nphA4Hu89Rk&feature=youtu.be"'], start: new Date(-1600,1,1), end: new Date(-1046,1,1)},
