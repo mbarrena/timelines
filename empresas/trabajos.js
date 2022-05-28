@@ -206,7 +206,14 @@ var items = new vis.DataSet([
 {id: "empresa_hidroelectrica_dique_frontal_rio_hondo", content: createItem("Empresa Hidroelectrica Dique frontal Rio Hondo","0",0,["https://drive.google.com/file/d/1opIa8e3mhkKe1iyfFmAtcmHPzf-Shs7D/view?usp=drivesdk"]), start: "1967-9-11"},
 {id: "brubank", content: createItem("Brubank","./img/brubank.png",82,["https://drive.google.com/file/d/1ZY36jJDC7cdPGhDnNVUmOPOFx5lWP8hM/view?usp=drivesdk"]), start: "2017-1-1"},
 {id: "obra_publica:_plan_autopistas_urbanas", content: createItem("Obra publica: Plan Autopistas Urbanas ","./img/obra_publica:_plan_autopistas_urbanas.png",64,["https://drive.google.com/file/d/1BXj2-QX5-3kQxZf-Xml441ungzFBLzrF/view?usp=drivesdk"]), start: "1978-9-2"},
-{id: "flybondi", content: createItem("Flybondi","./img/flybondi.png",131,["https://drive.google.com/file/d/1TDHjEzPpN19ASD-wZM8crdVpOnDghIvk/view?usp=drivesdk"]), start: "2016-6-1"}
+{id: "flybondi", content: createItem("Flybondi","./img/flybondi.png",131,["https://drive.google.com/file/d/1TDHjEzPpN19ASD-wZM8crdVpOnDghIvk/view?usp=drivesdk"]), start: "2016-6-1"},{id: "bodega_norton", content: createItem("Bodega Norton","./img/bodega_norton.png",90,["https://drive.google.com/file/d/1_Q-vD5xZXCaCFH7vIBLm5cbpBZ69FiMu/view?usp=drivesdk"]), start: "2022-5-4"},
+{id: "la_morenita", content: createItem("La Morenita ","./img/la_morenita.png",48,["https://drive.google.com/file/d/1Sy7Gq83uOPr27yJL-oaWIpKi5ISxqXVS/view?usp=drivesdk"]), start: "1890-1-1"},
+{id: "aerotransporte_litoral_argentino_ala", content: createItem("Aerotransporte Litoral Argentino (ALA)","./img/aerotransporte_litoral_argentino_ala.png",208,["https://drive.google.com/file/d/1xU5MQeWglMooBij8HOkq_-xxSzdn96rm/view?usp=drivesdk"]), start: "1956-10-25"},
+{id: "agd_aceitera_general_deheza", content: createItem("AGD Aceitera General Deheza","./img/agd_aceitera_general_deheza.png",48,["https://drive.google.com/file/d/1hZwOjBw03pvAvzJZcqazlU5pxRlx_umC/view?usp=drivesdk"]), start: "1948-7-22"},
+{id: "bodegas_bianchi", content: createItem("Bodegas Bianchi","./img/bodegas_bianchi.png",67,["https://drive.google.com/file/d/1DaWZgid49eXhUiwU6K_HMs8KZ_jU2LMq/view?usp=drivesdk"]), start: "1928-1-1"},
+{id: "aero_talleres_boero_s.r.l", content: createItem("Aero Talleres Boero S.R.L","./img/aero_talleres_boero_s.r.l.png",64,["https://drive.google.com/file/d/17NXwqcfgN24pJ0qISU0lOnA3EeQCeSBh/view?usp=drivesdk"]), start: "1956-5-1"},
+{id: "cafe_martinez", content: createItem("Café Martínez","./img/cafe_martinez.png",48,["https://drive.google.com/file/d/1gEQWB5vT6CfyiajwkqwZ_X0Wz9UMhBBQ/view?usp=drivesdk"]), start: "1933-1-1"},
+{id: "magnasco_s.a", content: createItem("Magnasco S.A","./img/magnasco_s.a.png",95,["https://drive.google.com/file/d/14qK0r3zgxfZZNOcMCSoPOkhZtKvTI_Go/view?usp=drivesdk"]), start: "1855-1-18"},
+{id: "metalpar", content: createItem("METALPAR","./img/metalpar.png",196,["https://drive.google.com/file/d/1ejfCAbNWwokA8U9gAeZBEtFSOhLgCpJa/view?usp=drivesdk"]), start: "1966-1-21"},
+{id: "alba_pinturas", content: createItem("Alba Pinturas","./img/alba_pinturas.png",48,["https://drive.google.com/file/d/1Mu1GejDcZ1fYll6irs4EDn19Hs9EQ76l/view?usp=drivesdk"]), start: "1925-4-14"}
 ]);
-
-console.log(JSON.stringify(Object.fromEntries(alllinks)));
