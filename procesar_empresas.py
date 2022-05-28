@@ -160,7 +160,7 @@ print("Version finalizada creada")
 
 #La version appendable va con coma y sin linea finalizadora
 f = open("./empresas/trabajos_appendable.js", "a")
-f.write(cosas.iloc[-1]+",")
+f.write(cosas.iloc[-1]+",\n")
 f.close()
 print("Versión appendable creada")
 print("Finalizado!")
