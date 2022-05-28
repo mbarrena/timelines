@@ -2,49 +2,14 @@
 <html>
 <head>
   <title>Unidad 8</title>
-  <script src="vis-timeline-graph2d.min.js"></script>
-  <script src="data.js"></script>
+  <script src="../src/vis-timeline-graph2d.min.js"></script>
+  <script src="../src/data.js"></script>
   <script src="8unidad.js"></script>
-  <link href="vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
   <!-- load handlebars for templating, and create a template -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-  <script id="item-template" type="text/x-handlebars-template">
-    <table class="score">
-      <tr>
-        <td>
-          {{#if image}}
-            <img src={{image}} width="30" height="30" alt="" style="vertical-align:middle;"/>
-          {{else}}
-            <img src="../img/triangle.svg" width="8" height="8" alt="" style="vertical-align:middle;"/>
-          {{/if}}
-        </td>
-        <td style="padding:0 4px 0 4px;">
-          {{#if link}}
-            <a href={{link}} alt="">{{content}}</a>
-          {{else}}
-            {{#if links}}
-                <ul class="people_list" style="list-style:none;padding: 0;margin:0;text-align:left;">
-                <li><a href={{links.[1]}} alt="">{{content}}</a></li>
-                {{#each links}}
-                {{#if @first}}
-                  
-                {{else}}
-                  <li><a href={{this}} alt="">Otro trabajo</a></li>
-                {{/if}}
-                {{/each}}
-                </ul>
-            {{else}}
-                {{content}}
-            {{/if}}
-          {{/if}}
-        </td>
-          
-          
-      </tr>
-    </table>
-  </script>
-
-  <link href="../src/style.css" rel="stylesheet" />  
+  <script src="../src/handlebars.min.js"></script>
+  <script id="item-template" src="../src/events-template.tpl.js"></script>
+  <link href="../src/style.css" rel="stylesheet" />
+  <!-- overload stylesheet with unit-specific colors -->
   <style type="text/css">
     :root {
       --main-bg-color: #feffb5;
@@ -56,13 +21,6 @@
 <body>
 
 <div id='body'>
-<!---
-<div id="intro">
-<h2>Empresas en Argentina - Prof. Mariana Barreña</h2>
-Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
-</div>
---->
-
 <div id="visualization">
   <div id="busqueda">
     Buscar evento:
@@ -78,8 +36,6 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
       <br>Hacer click en evento para copiar su nombre.
       <br><small>Profesora Mariana Barreña. <a href="https://github.com/makobot-sh" target="_blank">credit</a></small>
     </div>
-  <!--
-  -->
   </div>
   <div id='copytext'>
       <big>Nombre del evento copiado al portapapeles!
@@ -87,115 +43,6 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
 </div>
 </div>
 <input class='copyfrom' id='clipb' tabindex='-1' aria-hidden='true'>
-<script>
-  // la variable items que contiene todos los items a mostrar en la línea de tiempo se encuentra en data.js
-
-  // var txtData = document.getElementById('data');
-  //var btnLoad = document.getElementById('load');
-  //var btnSave = document.getElementById('save');
-
-  // Create an empty DataSet.
-  // This DataSet is used for two way data binding with the Timeline.
-  // var items = new vis.DataSet();
-
-  // create a handlebars template
-  var source   = document.getElementById('item-template').innerHTML;
-  var template = Handlebars.compile(document.getElementById('item-template').innerHTML);
-
-  // create a timeline
-  var hmin = window.screen.height*80/100;
-  var hmax = window.screen.height*80/100;
-  var container = document.getElementById('visualization');
-  var options = {
-    width: '100%',
-    minHeight: hmin,
-    maxHeight: hmax,
-    margin: {
-      item: {
-        horizontal: 5,
-        vertical: 5
-      },
-      axis: 20,
-  },
-  zoomMin: 63080000000,
-  template: template,
-  align:"left"
-  };
-  
-  var timeline = new vis.Timeline(container, items, options);
-  var focus_op = {
-    animation: false
-  }
-  
-  var signoayuda = document.getElementById('signoayuda');
-
-  timeline.setWindow("1975","1983");
-  //signoayuda.addEventListener('onmouseenter',helptext_show,false);
-  //signoayuda.addEventListener('onmouseleave',helptext_hide,false);
-  //timeline.focus("pritty");
-  //timeline.focus(renault_argentina,carrefour,focus_op)
-  //timeline.focus(id or ids [, options])
-
-  //BUSCADOR
-  function buscador(){
-    var inputVal = document.getElementById("buscador").value;
-    inputVal = inputVal.toLowerCase();
-    inputVal = inputVal.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); //sacar tildes
-    inputVal = inputVal.replace(/ /g,"_");
-    if(inputVal!=""){
-      var zoomitem = items.getIds({
-        filter: function (item) {
-          return (item.id.toString().includes(inputVal));
-        }
-      });
-      timeline.focus(zoomitem,{zoom:true}); 
-      timeline.setSelection(zoomitem); 
-    }else{
-      timeline.setSelection([]);
-    }
-  }
-
-  function fadein(elemID){
-    document.getElementById(elemID).style.opacity="50%";
-    document.getElementById(elemID).style.display="initial";
-    setTimeout(() => {
-      document.getElementById(elemID).style.opacity="75%";
-      setTimeout(() => {
-        document.getElementById(elemID).style.opacity="100%";
-      }, 25);
-    }, 25);
-  }
-
-  function fadeout(elemID){
-    document.getElementById(elemID).style.opacity="75%";
-      setTimeout(() => {
-        document.getElementById(elemID).style.opacity="50%";
-        setTimeout(() => {
-          document.getElementById(elemID).style.display="none";
-        }, 25);
-      }, 25);
-  }
-
-  timeline.on('select', function (properties) {
-    var copyText = items.get(properties.items)[0].content.toString();
-    document.getElementById("clipb").value = copyText;
-    document.getElementById("clipb").select();
-    document.execCommand('copy');
-    //alert('Copiado nombre del evento: ' + copyText);
-    fadein("copytext");
-    //wait before disappearing text
-    setTimeout(() => {
-      fadeout("copytext");
-    }, 1500);
-  });
-
-  function helptext_show(){
-    document.getElementById("helptext").style.display="initial";
-  }
-  function helptext_hide(){
-    document.getElementById("helptext").style.display="none";
-  }
-
-</script>
+<script src="../src/timeline-source.js"></script>
 </body>
 </html>

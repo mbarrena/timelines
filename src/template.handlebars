@@ -1,0 +1,33 @@
+<table class="score">
+    <tr>
+    <td>
+        {{#if image}}
+        <img src={{image}} width="30" height="30" alt="" style="vertical-align:middle;"/>
+        {{else}}
+        <img src="../img/triangle.svg" width="8" height="8" alt="" style="vertical-align:middle;"/>
+        {{/if}}
+    </td>
+    <td style="padding:0 4px 0 4px;">
+        {{#if link}}
+        <a href={{link}} alt="">{{content}}</a>
+        {{else}}
+        {{#if links}}
+            <ul class="people_list" style="list-style:none;padding: 0;margin:0;text-align:left;">
+            <li><a href={{links.[1]}} alt="">{{content}}</a></li>
+            {{#each links}}
+            {{#if @first}}
+                
+            {{else}}
+                <li><a href={{this}} alt="">Otro trabajo</a></li>
+            {{/if}}
+            {{/each}}
+            </ul>
+        {{else}}
+            {{content}}
+        {{/if}}
+        {{/if}}
+    </td>
+        
+        
+    </tr>
+</table>

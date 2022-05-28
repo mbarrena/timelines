@@ -208,3 +208,5 @@ var items = new vis.DataSet([
 {id: "obra_publica:_plan_autopistas_urbanas", content: createItem("Obra publica: Plan Autopistas Urbanas ","./img/obra_publica:_plan_autopistas_urbanas.png",64,["https://drive.google.com/file/d/1BXj2-QX5-3kQxZf-Xml441ungzFBLzrF/view?usp=drivesdk"]), start: "1978-9-2"},
 {id: "flybondi", content: createItem("Flybondi","./img/flybondi.png",131,["https://drive.google.com/file/d/1TDHjEzPpN19ASD-wZM8crdVpOnDghIvk/view?usp=drivesdk"]), start: "2016-6-1"}
 ]);
+
+console.log(JSON.stringify(Object.fromEntries(alllinks)));

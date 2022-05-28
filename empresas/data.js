@@ -1,3 +1,5 @@
+var debug = false
+var alllinks = new Map();
 function createItem(text,image_path,width_img,links){
 	var item = document.createElement('div');
 	if(image_path != "0"){
@@ -23,6 +25,9 @@ function createItem(text,image_path,width_img,links){
 		a.innerHTML = text;
 		item.appendChild(document.createElement('br'));
 		item.appendChild(a);
+	}
+	if (debug) {
+		alllinks.set(text,links)
 	}
 	return item;
 }

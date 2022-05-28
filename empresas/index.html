@@ -2,22 +2,14 @@
 <html>
 <head>
   <title>Empresas - línea de tiempo</title>
-  <script src="vis-timeline-graph2d.min.js"></script>
+  <script src="../src/vis-timeline-graph2d.min.js"></script>
   <script src="data.js"></script>
   <script src="trabajos.js"></script>
-  <link href="vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
   <link href="timeline.css" rel="stylesheet" />  
 </head>
 <body>
 
 <div id='body'>
-<!---
-<div id="intro">
-<h2>Empresas en Argentina - Prof. Mariana Barreña</h2>
-Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
-</div>
---->
-
 <div id="visualization">
   <div id="busqueda">
     Buscar empresa:
@@ -25,15 +17,13 @@ Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
   </div>
   <div id='ayuda' onmouseleave="helptext_hide()">
     <div id='signoayuda' onmouseenter="helptext_show()">
-      <img src="./img/question.png", style="width:40px;height:40px;">
+      <img src="../img/question.svg", style="width:40px;height:40px;">
     </div>
     <div id='helptext'>
       <a href="https://mbarrena.github.io/timelines/empresas/" target="_blank">Fullscreen</a>
       <br>Utilizar rueda del ratón para acercar o alejar, arrastrar para moverse.
       <br><small>Profesora Mariana Barreña. <a href="https://github.com/makobot-sh" target="_blank">credit</a></small>
     </div>
-  <!--
-  -->
   </div>
 </div>
 </div>
