@@ -16,6 +16,7 @@ function createItem(text,image_path,width_img,links){
 			var a = document.createElement('a');
 			a.setAttribute('href',links[i]);
 			a.innerHTML = "Trabajo ("+ (i+1).toString() + ")";
+			if (i==0) { a.innerHTML = text; }
 			item.appendChild(document.createElement('br'));
 			item.appendChild(a);
 		}
