@@ -14,7 +14,6 @@ var template = Handlebars.templates.template;
 var screenh = window.screen.height*80/100
 var container = document.getElementById('visualization');
 var options = {
-display: "inline-block",
 width: '100%',
 height: screenh,
 minHeight: screenh,
