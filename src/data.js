@@ -13,7 +13,7 @@ function createItem(text,image_path,width_img,links){
 	if(links.length > 1){
 		for (var i = 0; i < links.length; i++) {
 			var a = document.createElement('a');
-			a.setAttribute('target',"_blank")
+			a.setAttribute('target',"_parent")
 			a.setAttribute('href',links[i]);
 			a.innerHTML = "Referencia ("+ (i+1).toString() + ")";
 			item.appendChild(document.createElement('br'));
@@ -21,7 +21,7 @@ function createItem(text,image_path,width_img,links){
 		}
 	}else{
 		var a = document.createElement('a');
-		a.setAttribute('target',"_blank")
+		a.setAttribute('target',"_parent")
 		a.setAttribute('href',links[0]);
 		a.innerHTML = text;
 		//item.appendChild(document.createElement('br'));

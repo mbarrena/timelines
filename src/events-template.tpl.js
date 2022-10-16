@@ -23,8 +23,8 @@ templates['template'] = template({"1":function(container,depth0,helpers,partials
 
   return "        <a href="
     + alias4(((helper = (helper = lookupProperty(helpers,"link") || (depth0 != null ? lookupProperty(depth0,"link") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"link","hash":{},"data":data,"loc":{"start":{"line":12,"column":16},"end":{"line":12,"column":24}}}) : helper)))
-    + " alt=\"\">"
-    + alias4(((helper = (helper = lookupProperty(helpers,"content") || (depth0 != null ? lookupProperty(depth0,"content") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"content","hash":{},"data":data,"loc":{"start":{"line":12,"column":32},"end":{"line":12,"column":43}}}) : helper)))
+    + " alt=\"\" target=\"_parent\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"content") || (depth0 != null ? lookupProperty(depth0,"content") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"content","hash":{},"data":data,"loc":{"start":{"line":12,"column":49},"end":{"line":12,"column":60}}}) : helper)))
     + "</a>\n";
 },"7":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -45,8 +45,8 @@ templates['template'] = template({"1":function(container,depth0,helpers,partials
 
   return "            <ul class=\"people_list\" style=\"list-style:none;padding: 0;margin:0;text-align:left;\">\n            <li><a href="
     + alias1(container.lambda(((stack1 = (depth0 != null ? lookupProperty(depth0,"links") : depth0)) != null ? lookupProperty(stack1,"1") : stack1), depth0))
-    + " alt=\"\">"
-    + alias1(((helper = (helper = lookupProperty(helpers,"content") || (depth0 != null ? lookupProperty(depth0,"content") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(alias2,{"name":"content","hash":{},"data":data,"loc":{"start":{"line":16,"column":45},"end":{"line":16,"column":56}}}) : helper)))
+    + " alt=\"\" target=\"_parent\">"
+    + alias1(((helper = (helper = lookupProperty(helpers,"content") || (depth0 != null ? lookupProperty(depth0,"content") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(alias2,{"name":"content","hash":{},"data":data,"loc":{"start":{"line":16,"column":62},"end":{"line":16,"column":73}}}) : helper)))
     + "</a></li>\n"
     + ((stack1 = lookupProperty(helpers,"each").call(alias2,(depth0 != null ? lookupProperty(depth0,"links") : depth0),{"name":"each","hash":{},"fn":container.program(9, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":17,"column":12},"end":{"line":23,"column":21}}})) != null ? stack1 : "")
     + "            </ul>\n";
@@ -64,7 +64,7 @@ templates['template'] = template({"1":function(container,depth0,helpers,partials
 },"12":function(container,depth0,helpers,partials,data) {
     return "                <li><a href="
     + container.escapeExpression(container.lambda(depth0, depth0))
-    + " alt=\"\">Otro trabajo</a></li>\n";
+    + " alt=\"\" target=\"_parent\">Otro trabajo</a></li>\n";
 },"14":function(container,depth0,helpers,partials,data) {
     var helper, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {

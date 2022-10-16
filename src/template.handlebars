@@ -9,16 +9,16 @@
     </td>
     <td style="padding:0 4px 0 4px;">
         {{#if link}}
-        <a href={{link}} alt="">{{content}}</a>
+        <a href={{link}} alt="" target="_parent">{{content}}</a>
         {{else}}
         {{#if links}}
             <ul class="people_list" style="list-style:none;padding: 0;margin:0;text-align:left;">
-            <li><a href={{links.[1]}} alt="">{{content}}</a></li>
+            <li><a href={{links.[1]}} alt="" target="_parent">{{content}}</a></li>
             {{#each links}}
             {{#if @first}}
                 
             {{else}}
-                <li><a href={{this}} alt="">Otro trabajo</a></li>
+                <li><a href={{this}} alt="" target="_parent">Otro trabajo</a></li>
             {{/if}}
             {{/each}}
             </ul>
