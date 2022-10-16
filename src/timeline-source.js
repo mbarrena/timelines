@@ -10,15 +10,15 @@
 
 // create a handlebars template
 var template = Handlebars.templates.template;
-
 // create a timeline
-var hmin = window.screen.height*80/100;
-var hmax = window.screen.height*80/100;
+var screenh = window.screen.height*80/100
 var container = document.getElementById('visualization');
 var options = {
+display: "inline-block",
 width: '100%',
-minHeight: hmin,
-maxHeight: hmax,
+height: screenh,
+minHeight: screenh,
+maxHeight: screenh,
 margin: {
     item: {
     horizontal: 5,
@@ -86,6 +86,7 @@ document.getElementById(elemID).style.opacity="75%";
     }, 25);
 }
 
+/*
 timeline.on('select', function (properties) {
 var copyText = items.get(properties.items)[0].content.toString();
 document.getElementById("clipb").value = copyText;
@@ -98,6 +99,7 @@ setTimeout(() => {
     fadeout("copytext");
 }, 1500);
 });
+*/
 
 function helptext_show(){
 document.getElementById("helptext").style.display="initial";

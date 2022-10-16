@@ -39,13 +39,14 @@
   // var items = new vis.DataSet();
 
   // create a timeline
-  var hmin = window.screen.height*80/100;
-  var hmax = window.screen.height*80/100;
+  var screenh = window.screen.height*80/100;
   var container = document.getElementById('visualization');
   var options = {
+  display: "inline-block",
   width: '100%',
-  minHeight: hmin,
-  maxHeight: hmax,
+  height: screenh,
+  minHeight: screenh,
+  maxHeight: screenh,
   margin: {
     item: {
       horizontal: 5,
@@ -63,7 +64,7 @@
   
   var signoayuda = document.getElementById('signoayuda');
 
-  timeline.setWindow("1946","1974");
+  //timeline.setWindow("1946","1974");
   //signoayuda.addEventListener('onmouseenter',helptext_show,false);
   //signoayuda.addEventListener('onmouseleave',helptext_hide,false);
   //timeline.focus("pritty");
