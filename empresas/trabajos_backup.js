@@ -71,7 +71,7 @@ var items = new vis.DataSet([
 {id: "tenaris", content: createItem("Tenaris","./img/tenaris.png",186,["https://drive.google.com/open?id=1oJ9tGwPL1qmzJVkSe6doKexEBlTO8nvb"]), start: "1950-07-01"},
 {id: "arcor", content: createItem("Arcor","./img/arcor.png",72,["https://drive.google.com/open?id=1xDdZuAehVSO_ap_SBv6IfrjMEE6wZzq5","https://drive.google.com/open?id=0B8EJMhrdDQ3mcV9xZU01RWRvS1U","https://drive.google.com/open?id=1EKUoEYoZSjKcGjl2NQXIgDdDH990r3QY","https://drive.google.com/open?id=1Acbz_DsXRClgsgIw2e9Ql8x45kuruYpA"]), start: "1951-07-05"},
 {id: "television_publica", content: createItem("Televisión Pública","./img/television_publica.png",48,["https://drive.google.com/open?id=12prcL_QIAAhL7PlrljBthGO3zkzaN4Gj"]), start: "1951-10-17"},
-{id: "embalse_de_rio_hondo", content: createItem("Embalse de Río Hondo","0",0,["https://drive.google.com/open?id=1CBC2RNLjpO1SmIoFR-Shf-OBcKd1SBqV","https://drive.google.com/file/d/17cyp68qE4kJAxLI7UsiXX-Wagvzhg1s8/view?usp=drivesdk"]), start: "1952-07-01"},
+{id: "embalse_de_rio_hondo", content: createItem("Embalse de Río Hondo","0",0,["https://drive.google.com/open?id=1CBC2RNLjpO1SmIoFR-Shf-OBcKd1SBqV","https://drive.google.com/file/d/17cyp68qE4kJAxLI7UsiXX-Wagvzhg1s8/view?usp=drivesdk","https://drive.google.com/file/d/17cyp68qE4kJAxLI7UsiXX-Wagvzhg1s8/view?usp=drivesdk"]), start: "1952-07-01"},
 {id: "astillero_rio_santiago", content: createItem("Astillero Río Santiago","./img/astillero_rio_santiago.png",61,["https://drive.google.com/open?id=0B8EJMhrdDQ3mazhNQUlxaW1xZUk"]), start: "1953-06-15"},
 {id: "industrias_kaiser_argentina_s.a.", content: createItem("Industrias Kaiser Argentina S.A.","./img/industrias_kaiser_argentina_s.a..png",47,["https://drive.google.com/open?id=1hcEhub1Rx06E6b4_mdHSCiFyjm5oiF34"]), start: "1954-07-01"},
 {id: "correo_oca", content: createItem("Correo OCA","./img/correo_oca.png",119,["https://drive.google.com/open?id=11H786v-lXikjDaOsImqEgTWVP0vhHhk4","https://drive.google.com/open?id=1Li_Ry05VtumiUHtW55gE8X_9gQtaDr2m"]), start: "1957-07-01"},
@@ -120,7 +120,7 @@ var items = new vis.DataSet([
 {id: "farmacity", content: createItem("FARMACITY","./img/farmacity.png",198,["https://drive.google.com/file/d/1uY8w85GNc6ycTxb_uyDXP3alWBofrhjX/view?usp=sharing"]), start: "1997-01-01"},
 {id: "ampliacion_av._general_paz", content: createItem("Ampliación Av. General Paz","0",0,["https://drive.google.com/open?id=0B8EJMhrdDQ3mRHplMVJJSUpYVlk"]), start: "1997-07-01"},
 {id: "despegar", content: createItem("Despegar","./img/despegar.png",187,["https://drive.google.com/open?id=1IqHMRPtku1pS3GSbNTm_JkKlBeKJVmQR"]), start: "1999-07-21"},
-{id: "mercado_libre", content: createItem("Mercado Libre","./img/mercado_libre.png",67,["https://drive.google.com/open?id=1f3Lp0KRabrtoNcSskCuInGFgUJg6HKZS","https://drive.google.com/file/d/1U2LfgoSmo3kMGDRrE0Psyn9nCHhMxm3p/view?usp=drivesdk","https://drive.google.com/file/d/1IQKn4e8oxD_0JwCxP-wC1OLG2fbSYe4h/view?usp=drivesdk","https://drive.google.com/open?id=1hQRsrB6WfZBtG9sCKcKFnx4akdndBHe1"]), start: "1999-08-03"},
+{id: "mercado_libre", content: createItem("Mercado Libre","./img/mercado_libre.png",67,["https://drive.google.com/open?id=1f3Lp0KRabrtoNcSskCuInGFgUJg6HKZS","https://drive.google.com/file/d/1U2LfgoSmo3kMGDRrE0Psyn9nCHhMxm3p/view?usp=drivesdk","https://drive.google.com/file/d/1IQKn4e8oxD_0JwCxP-wC1OLG2fbSYe4h/view?usp=drivesdk","https://drive.google.com/open?id=1hQRsrB6WfZBtG9sCKcKFnx4akdndBHe1","https://drive.google.com/file/d/1hQRsrB6WfZBtG9sCKcKFnx4akdndBHe1/view?usp=drivesdk"]), start: "1999-08-03"},
 {id: "hilton", content: createItem("Hilton","./img/hilton.png",138,["https://drive.google.com/open?id=1zgoEI_bOzsuhCwsG7DQHAeG7SjNcX01y"]), start: "2000-05-01"},
 {id: "grido", content: createItem("Grido","./img/grido.png",92,["https://drive.google.com/open?id=1kezYZa3CW5Z8AlnHZKw9VyM7oW5NwCOM"]), start: "2001-07-24"},
 {id: "mostaza", content: createItem("Mostaza","./img/mostaza.png",48,["http://drive.google.com/uc?export=view&id=1GBORt1Nmb0OgAaQL8aYUPHhJDf2q642p"]), start: "2001-12-13"},
@@ -230,6 +230,11 @@ var items = new vis.DataSet([
 {id: "olx", content: createItem("OLX","./img/olx.png",83,["https://drive.google.com/file/d/15ikneKIwqoW33AvnuyW3-oI9TwLUU4ck/view?usp=drivesdk"]), start: "2006-3-3"},
 {id: "47_street", content: createItem("47 street","./img/47_street.png",48,["https://drive.google.com/file/d/1CcYTze7M9uPX9Tt2RE6mv_nc4u-TEm28/view?usp=drivesdk"]), start: "1986-9-1"},
 {id: "embalse_de_piedra_del_aguila", content: createItem("Embalse de Piedra del Águila","./img/embalse_de_piedra_del_aguila.png",64,["https://drive.google.com/file/d/1neaDBGjjZ6YoLVNeYFXuw2mxMK4xtPW5/view?usp=drivesdk"]), start: "1985-3-10"},
-{id: "hidronor", content: createItem("Hidronor","./img/hidronor.png",134,["https://drive.google.com/file/d/1EzloOh4LKLDKvVWpvruJhOf8Vxquov5c/view?usp=drivesdk"]), start: "2022-6-25"}
+{id: "hidronor", content: createItem("Hidronor","./img/hidronor.png",134,["https://drive.google.com/file/d/1EzloOh4LKLDKvVWpvruJhOf8Vxquov5c/view?usp=drivesdk"]), start: "2022-6-25"},
+{id: "lumilagro", content: createItem("Lumilagro","./img/lumilagro.png",79,["https://drive.google.com/file/d/17MQ4F4Rue1nkYHcj2UeZD9Fi5JVoRz8K/view?usp=drivesdk"]), start: "1941-2-26"},
+{id: "bieckert", content: createItem("Bieckert","./img/bieckert.png",85,["https://drive.google.com/file/d/1JyY662KWpEyCscu7DLwqypQZqfgDqZZe/view?usp=drivesdk","https://drive.google.com/file/d/1qt195USKLxzSRQ0GddpVp4gPmM0f_5L0/view?usp=drivesdk"]), start: "1860-2-15"},
+{id: "panini", content: createItem("Panini","./img/panini.png",80,["https://drive.google.com/file/d/1t9IYIw83wsazBBgH0PcKV_YK3sFCQrcC/view?usp=drivesdk"]), start: "1961-2-21"},
+{id: "basso", content: createItem("Basso","./img/basso.png",48,["https://drive.google.com/file/d/1lhTV7rlSDfly5eoKqcTIM0YxuqAvSJsJ/view?usp=drivesdk"]), start: "1963-2-12"},
+{id: "copelco", content: createItem("COPELCO","0",0,["https://drive.google.com/file/d/1U8WF1tspHy4m4r5HHW2aWgxcZiCvILFw/view?usp=drivesdk"]), start: "1954-1-1"},
+{id: "canale", content: createItem("Canale","./img/canale.png",136,["https://drive.google.com/file/d/1rsBYpIZC0hTyOhlpjSr_jHNOZfGoXib4/view?usp=drivesdk"]), start: "1875-1-1"}
 ]);
-console.log(linklist)
