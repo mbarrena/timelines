@@ -48,7 +48,7 @@ var items = new vis.DataSet([
 {id: "loma_negra", content: createItem("Loma Negra","./img/loma_negra.png",55,["https://drive.google.com/open?id=0B8EJMhrdDQ3mbGVpdnJRSVoyWFk"]), start: "1926-08-05"},
 {id: "colgate_-_palmolive", content: createItem("Colgate - Palmolive","./img/colgate_-_palmolive.png",189,["https://drive.google.com/open?id=0B8EJMhrdDQ3maGh3WTZfLUM0MXc"]), start: "1927-07-01"},
 {id: "rca_victor", content: createItem("RCA Victor","./img/rca_victor.png",67,["http://drive.google.com/uc?export=view&id=1EScNxiKKiPondMsqfUzBrZU61mDwCRXL"]), start: "1929-03-11"},
-{id: "la_serenisima", content: createItem("La Serenísima","./img/la_serenisima.png",124,["https://drive.google.com/open?id=0B8EJMhrdDQ3mNzEyc2FtdWtfaDg"]), start: "1929-10-29"},
+{id: "la_serenisima", content: createItem("La Serenísima","./img/la_serenisima.png",124,["https://drive.google.com/open?id=0B8EJMhrdDQ3mNzEyc2FtdWtfaDg","https://drive.google.com/file/d/1wTTb-Sy4o-QzW4ap9Zi9ivA5KZANXiRX/view?usp=drivesdk"]), start: "1929-10-29"},
 {id: "johnson_&amp;_johnson", content: createItem("Johnson &amp; Johnson","./img/johnson_&amp;_johnson.png",228,["https://drive.google.com/open?id=0B8EJMhrdDQ3mRVZpYmRJRnVHTkk"]), start: "1931-01-01"},
 {id: "molina_canuelas", content: createItem("Molina Cañuelas","0",0,["https://drive.google.com/open?id=1THLpLwwre3eqJszQuKHCyxHKp6ZjZ-zv"]), start: "1931-07-01"},
 {id: "philco", content: createItem("PHILCO","./img/philco.png",185,["https://drive.google.com/open?id=0B8EJMhrdDQ3mbjRkNlRCYVhUZ00"]), start: "1931-07-01"},
@@ -236,5 +236,17 @@ var items = new vis.DataSet([
 {id: "panini", content: createItem("Panini","./img/panini.png",80,["https://drive.google.com/file/d/1t9IYIw83wsazBBgH0PcKV_YK3sFCQrcC/view?usp=drivesdk"]), start: "1961-2-21"},
 {id: "basso", content: createItem("Basso","./img/basso.png",48,["https://drive.google.com/file/d/1lhTV7rlSDfly5eoKqcTIM0YxuqAvSJsJ/view?usp=drivesdk"]), start: "1963-2-12"},
 {id: "copelco", content: createItem("COPELCO","0",0,["https://drive.google.com/file/d/1U8WF1tspHy4m4r5HHW2aWgxcZiCvILFw/view?usp=drivesdk"]), start: "1954-1-1"},
-{id: "canale", content: createItem("Canale","./img/canale.png",136,["https://drive.google.com/file/d/1rsBYpIZC0hTyOhlpjSr_jHNOZfGoXib4/view?usp=drivesdk"]), start: "1875-1-1"}
+{id: "canale", content: createItem("Canale","./img/canale.png",136,["https://drive.google.com/file/d/1rsBYpIZC0hTyOhlpjSr_jHNOZfGoXib4/view?usp=drivesdk"]), start: "1875-1-1"},
+{id: "la_caja_de_ahorro_y_seguro_s.a.", content: createItem("La Caja de Ahorro y Seguro S.A.","./img/la_caja_de_ahorro_y_seguro_s.a..png",76,["https://drive.google.com/file/d/1R2QHziTYoKZBZx6i-PotTpyC_4TDrMKn/view?usp=drivesdk"]), start: "1915-4-5"},
+{id: "suter_s.a", content: createItem("SUTER S.A","./img/suter_s.a.png",87,["https://drive.google.com/file/d/1a2jVjrV7R4Dds5tFNKxj2I5P70N_B6Hg/view?usp=drivesdk"]), start: "1897-6-30"},
+{id: "four_seasons", content: createItem("Four Seasons ","./img/four_seasons.png",75,["https://drive.google.com/file/d/1gZUPGzVxXrkeoh9c4VwiTMLEML1tsdAt/view?usp=drivesdk"]), start: "1960-9-21"},
+{id: "honda", content: createItem("Honda","./img/honda.png",133,["https://drive.google.com/file/d/1QbrkHLppvG46VA7GWbuGEZyWzTrefN3m/view?usp=drivesdk"]), start: "1946-9-24"},
+{id: "osram", content: createItem("OSRAM","./img/osram.png",72,["https://drive.google.com/file/d/153fK3ZCtU_T7e-z4SL8MN64Oh_G-dOZL/view?usp=drivesdk"]), start: "1919-7-1"},
+{id: "assist_card", content: createItem("Assist Card","./img/assist_card.png",48,["https://drive.google.com/file/d/1Tlz7AtG8PQqPIQB-9scKWGbD6htjJlej/view?usp=drivesdk"]), start: "1972-1-1"},
+{id: "obin_sa", content: createItem("OBIN SA","./img/obin_sa.png",205,["https://drive.google.com/file/d/19IyUTVA4khE3ZZJFJM466w5AA76SeE_R/view?usp=drivesdk"]), start: "1977-7-1"},
+{id: "hileret", content: createItem("Hileret","./img/hileret.png",48,["https://drive.google.com/file/d/1lBk3NzhjY24xVS2-dXPDWv603xlaVbvr/view?usp=drivesdk"]), start: "1923-10-23"},
+{id: "jockey_club", content: createItem("Jockey club ","./img/jockey_club.png",49,["https://drive.google.com/file/d/1Lx4pSM4IFipcOAcNbxu2GIDqsvQ8Xg-7/view?usp=drivesdk"]), start: "1882-4-15"},
+{id: "rielamericano", content: createItem("Rielamericano","./img/rielamericano.png",48,["https://drive.google.com/file/d/1J7UkEO0ojzG2NeeCgOyDVHehfgqiiHP0/view?usp=drivesdk"]), start: "1967-1-1"},
+{id: "philip_morris", content: createItem("Philip Morris","./img/philip_morris.png",63,["https://drive.google.com/file/d/1cf2QFL7LMwdGQEen7uAqCn_m5wgV8Xxw/view?usp=drivesdk"]), start: "1847-3-1"},
+{id: "millanel_cosmetica", content: createItem("Millanel Cosmetica","./img/millanel_cosmetica.png",91,["https://drive.google.com/file/d/1GZRHyCUJ1UpYd3e8M2YH9Tb_sYeZHW3E/view?usp=drivesdk"]), start: "2003-9-2"}
 ]);
