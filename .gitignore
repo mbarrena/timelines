@@ -1,5 +1,8 @@
 .ipynb_checkpoints
 .git
+.vscode/
+__pycache__/
+
 obsoletas
 TODO_unidades.txt
 TODO.txt
