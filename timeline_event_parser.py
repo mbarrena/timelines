@@ -73,7 +73,7 @@ class CsvEvent:
         dataDict["links"] = cls._getCsvEventLinks(event)
         dataDict["unit"] = event[cls.unit_col]
         dataDict["image"] = quote('../img/'+dataDict["type"]+'.svg')
-        start, rawStart = cls._parseStartDate(event)
+        rawStart, start = cls._parseStartDate(event)
         dataDict["start"] = start
         end, _ = cls._parseEndDate(event)
         dataDict["content"] = "{}: {}".format(rawStart, event[cls.event_col].replace("&#34;", '\\"').replace('"','\\"'))
