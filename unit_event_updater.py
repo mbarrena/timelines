@@ -9,9 +9,10 @@ def get_numeric_input(msg):
     while not re.match("\d+",var_input):
         print ("Error! El orden debe ser un número")
         var_input = input("{}: ".format(msg))
+    return var_input
 
 parser = argparse.ArgumentParser(description='Unit timeline events parser, for writing new events to existing timeline CSVs.')
-parser.add_argument('file', type=int,
+parser.add_argument('file', type=str,
                     help='A .csv containing the events to add to the unit timelines.')
 parser.add_argument('--test', '-t', action='store_true',
                     help='Test essential program functions against desired .csv to check compatibility with program (read-only).')
@@ -21,6 +22,8 @@ df = pd.read_csv(args.file,skiprows=1,index_col=False)
 
 start_order = get_numeric_input("Evento con menor orden a insertar")
 end_order = get_numeric_input("Evento con mayor orden a insertar")
+
+print(f"Insertando (ambos inclusive):[{int(start_order)} {int(end_order)}]")
 
 parser = EventsCsvParser(df, start_order, end_order)
 

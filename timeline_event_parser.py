@@ -53,6 +53,7 @@ class CsvEvent:
         self.idn = data["id"]
         self.name = data["content"]
         self.img = data["image"]
+        self.unit = data["unit"]
         if ("link" in data):
             self.__links = [data["link"]]
         else:
@@ -61,7 +62,7 @@ class CsvEvent:
         if ("end" in data):
             self.__endDate = data["end"]
         else:
-            self.endDate = None
+            self.__endDate = None
 
     @classmethod
     def fromCsvEvent(cls, event):
@@ -86,9 +87,9 @@ class CsvEvent:
             content += ", links:" + str(self.__links)
         elif(len(self.__links)==1):
             #if there is only one link, pass single link
-            content += ", link:" + self.__links[0]
+            content += ", link:" + next(iter(self.__links))
         
-        res = "{id: {}, content: {}, start: {}".format(quote(self.idn), content, self.__startDate)
+        res = f"{{id: {quote(self.idn)}, content: {content}, start: {self.__startDate}"
         if(self.__endDate is not None):
             res += ", end: " + self.__endDate
         res += "}"
@@ -116,7 +117,7 @@ class CsvEvent:
         if(pd.isnull(event[cls.start_y_col])): #No start year (invalid)
             raise Exception("No start date specified for event")
 
-        if( pd.isnull(event[cls.start_ac_col]) ):
+        elif( pd.isnull(event[cls.start_ac_col]) ):
             # Not a b.C. date
             if(pd.isnull(event[cls.start_m_col])): #No month or day specified
                 __rawStartDate="{}".format(int(event[cls.start_y_col]))
@@ -138,7 +139,7 @@ class CsvEvent:
             __rawEndDate = None
             __endDate = None
 
-        if( pd.isnull(event[cls.end_ac_col]) ):
+        elif( pd.isnull(event[cls.end_ac_col]) ):
             # Not a b.C. date
             if (pd.isnull(event[cls.end_m_col])): #No month or day specified
                 __rawEndDate="{}".format(int(event[cls.end_y_col]))
@@ -245,7 +246,7 @@ class EventWriter:
             events = self.df[self.df['Unit']==unidad]
             if (not events.empty) :
                 print(events.count())
-                self.unit_dict[unidad] = events
+                unit_dict[unidad] = events
         return unit_dict
 
     def _writeFinalizedFileFinalLine(self, unit, unit_name):
