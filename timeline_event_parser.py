@@ -245,6 +245,7 @@ class EventWriter:
             unidad = "{}unidad".format(i)
             events = self.df[self.df['Unit']==unidad]
             if (not events.empty) :
+                print(f"Agregando eventos unidad {i}")
                 print(events.count())
                 unit_dict[unidad] = events
         return unit_dict

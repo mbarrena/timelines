@@ -92,3 +92,5 @@ var items = new vis.DataSet([
 {id: "caida_del_muro_de_berlin", content: "1989-11-9: Caída del Muro de Berlín", image:"../img/informacion.svg", link:"https://youtu.be/5JLSNNgxXNg", start: "1989-11-9"},
 {id: "revoluciones_de_1989,_se_rompe_el_b", content: "1989: \"Revoluciones\" de 1989, se rompe el bloque oriental ", image:"../img/informacion.svg", link:"https://youtu.be/_tgmm7djdhw", start: "1989"},
 {id: "carlos_s._menem_asume_como_presiden", content: "1989-7-8: Carlos S. Menem asume como Presidente su 1° mandato", image:"../img/informacion.svg", links:[" https://www.youtube.com/watch?v=DaGuTk-dER4", "https://www.youtube.com/watch?v=ad2lVzCVq-M", "https://youtu.be/0JxyOoGaD7A"], start: "1989-7-8", end: "1999-12-10"},
+{id: "ley_de_obediencia_debida", content: "1987-6-8: Ley de Obediencia Debida", image: "../img/informacion.svg", link:"https://www.youtube.com/watch?v=mLbbmv-26EA", start: "1987-6-8"},
+{id: "correcciones_al_programa_del_plan_a", content: "1986-4-4: Correcciones al programa del Plan Austral", image: "../img/informacion.svg", link:"https://www.sociohistorica.fahce.unlp.edu.ar/article/download/SHe062/9905?inline=1", start: "1986-4-4"},

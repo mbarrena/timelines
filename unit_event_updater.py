@@ -23,7 +23,7 @@ df = pd.read_csv(args.file,skiprows=1,index_col=False)
 start_order = get_numeric_input("Evento con menor orden a insertar")
 end_order = get_numeric_input("Evento con mayor orden a insertar")
 
-print(f"Insertando (ambos inclusive):[{int(start_order)} {int(end_order)}]")
+print(f"Insertando (ambos inclusive):[{int(start_order)}, {int(end_order)}]")
 
 parser = EventsCsvParser(df, start_order, end_order)
 

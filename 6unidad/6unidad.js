@@ -72,5 +72,11 @@ var items = new vis.DataSet([
 {id: "asume_alsogaray_como_ministro_de_ec", content: "1959-6-25: Asume Alsogaray como ministro de economía", image:"../img/informacion.svg", link:"https://youtu.be/UQ0FszXzw7s", start: "1959-6-25", end: "1961-4-26"},
 {id: "presidencia_de_arturo_illia", content: "1963-10-12: Presidencia de Arturo Illia", image:"../img/informacion.svg", link:"https://youtu.be/UwN7ommEa70", start: "1963-10-12", end: "1966-6-28"},
 {id: "plan_nacional_de_desarrollo", content: "1964: Plan Nacional de Desarrollo ", image:"../img/informacion.svg", link:"https://cdsa.aacademica.org/000-010/164.pdf", start: "1964"},
-{id: "sancion_de_la_ley_14459,_ley_de_sal", content: "1964-5: Sanción de la Ley 14459, Ley de salario mínimo, vital y móvil", image:"../img/informacion.svg", link:"https://www.rionegro.com.ar/una-ley-sancionada-durante-la-presidencia-de-i-OQRN_671834/", start: "1964-5"}
+{id: "sancion_de_la_ley_14459,_ley_de_sal", content: "1964-5: Sanción de la Ley 14459, Ley de salario mínimo, vital y móvil", image:"../img/informacion.svg", link:"https://www.rionegro.com.ar/una-ley-sancionada-durante-la-presidencia-de-i-OQRN_671834/", start: "1964-5"},
+{id: "primeras_medidas_economicas_de_fron", content: "1958: Primeras medidas económicas de Frondizi ", image: "../img/informacion.svg", link:"https://m.youtube.com/watch?v=iMzhS9LUGeQ", start: "1958"},
+{id: "la_reforma_constitucional_de_1949", content: "1949: La reforma constitucional de 1949", image: "../img/informacion.svg", link:"https://www.youtube.com/watch?v=kHhc2NGgUZ8", start: "1949"},
+{id: "reforma_constitucional_de_1949", content: "1949: Reforma Constitucional de 1949", image: "../img/informacion.svg", link:"https://www.youtube.com/watch?v=kHhc2NGgUZ8", start: "1949"},
+{id: "la_presidencia_de_frondizi_y_el_des", content: "1958-5-1: La presidencia de FRONDIZI y el DESARROLLISMO", image: "../img/informacion.svg", link:"https://www.youtube.com/watch?v=uSDdh3biDag", start: "1958-5-1"},
+{id: "construccion_del_gasoducto_campo_du", content: "1949-12-29: Construcción del gasoducto Campo Duran", image: "../img/informacion.svg", link:"https://www.youtube.com/watch?v=IxTERADhq_Y&ab_channel=PanzerArchivo", start: "1949-12-29"},
+{id: "inauguracion_del_monumento_a_la_ban", content: "1957-6-20: Inauguración del Monumento a la Bandera", image: "../img/informacion.svg", link:"https://www.youtube.com/watch?v=-yhzXg1X4vU", start: "1957-6-20"}
 ]);
