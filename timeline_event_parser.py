@@ -84,7 +84,7 @@ class CsvEvent:
             
         if(len(self.__links)>1):
             #if there is multiple links, pass list of links (they're displayed differently than a single link)
-            content += ", links:" + str(self.__links)
+            content += f", links: {[unquote(x) for x in self.links]}"
         elif(len(self.__links)==1):
             #if there is only one link, pass single link
             content += ", link:" + next(iter(self.__links))
