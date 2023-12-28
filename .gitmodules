@@ -1,0 +1,4 @@
+[submodule "timelines-drive-app"]
+	path = timelines-drive-app
+	url = git@github.com:makobot-sh/timelines-drive-app.git
+	ignore = dirty
